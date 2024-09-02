@@ -1,0 +1,43 @@
+package rems.carpet.mixins;
+
+import rems.carpet.REMSSettings;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.CactusBlock;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
+
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import net.minecraft.util.math.random.Random;
+
+@Mixin(CactusBlock.class)
+public abstract class CactusBlockMixin{
+    @Shadow
+    public abstract void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random);
+
+    @Inject(
+            method = "scheduledTick",
+            at = @At(
+                    value = "INVOKE",
+                    shift = At.Shift.AFTER,
+                    target = "Lnet/minecraft/server/world/ServerWorld;breakBlock(Lnet/minecraft/util/math/BlockPos;Z)Z"
+            ),
+            cancellable = true
+    )
+    private void scheduleTickMixinInvoke(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {
+        if (REMSSettings.scheduledRandomTickCactus)
+            ci.cancel();
+    }
+
+    @Inject(
+            method = "scheduledTick",
+            at = @At("TAIL")
+    )
+    private void scheduleTickMixinTail(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {
+        if (REMSSettings.scheduledRandomTickCactus)
+            this.randomTick(state, world, pos, random);
+    }
+}

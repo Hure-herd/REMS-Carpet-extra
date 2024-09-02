@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "rems.carpet.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "PistonBlockMixin",
+    "PortalForcerMixin",
+    "keepWorldTickUpdate",
+    "TntEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

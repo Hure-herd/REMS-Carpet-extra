@@ -1,0 +1,32 @@
+{
+  "carpet.category.REMS": "REMS",
+
+  "carpet.rule.pistonBlockChunkLoader.name": "活塞头区块加载",
+  "carpet.rule.pistonBlockChunkLoader.desc": "活塞或黏性活塞被激活且能正常伸出时以活塞头将到达的区块为中心加载3x3区块持续1.5s",
+  "carpet.rule.pistonBlockChunkLoader.extra.0": "[ON] - 当活塞/黏性活塞上方有钻石原矿时",
+  "carpet.rule.pistonBlockChunkLoader.extra.1": "[OFF] - 禁用该规则",
+
+  "carpet.rule.scheduledRandomTickCactus.name": "计划刻催熟仙人掌",
+  "carpet.rule.scheduledRandomTickCactus.desc": "当仙人掌方块收到计划刻时仍会给予生长随机刻",
+
+  "carpet.rule.mergeTNTPro.name": "更好的合并TNT",
+  "carpet.rule.mergeTNTPro.desc": "合并大量TNT以减小实体及爆炸带来的卡顿",
+
+  "carpet.rule.PearlTickets.name": "末影珍珠加载区块",
+  "carpet.rule.PearlTickets.desc": "这个mod允许末影珍珠实体选择性地加载即将通过的区块，这样珍珠炮打出的珍珠就不会因为进入未加载区块而丢失。在1.14+中可以替代地狱门加载链使用。",
+  "carpet.rule.PearlTickets.extra.0": "[ON] - 打开该规则",
+  "carpet.rule.PearlTickets.extra.1": "[OFF] - 禁用该规则",
+
+  "carpet.rule.teleportToPoiWithoutPortals.name": "POI传送门",
+  "carpet.rule.teleportToPoiWithoutPortals.desc": "重新添加传送至没有传送门方块的传送门POI的规则",
+
+  "carpet.rule.endGatewayChunkLoader.name": "末地折跃门区块加载器",
+  "carpet.rule.endGatewayChunkLoader.desc": "当实体穿越末地折跃门时，目标区块会像下界传送门一样使目标区块获得 15 秒的加载。",
+  "carpet.rule.endGatewayChunkLoader.extra.0": "all - 所有实体穿过末地折跃门时，给予目标区块加载票。",
+  "carpet.rule.endGatewayChunkLoader.extra.1": "except_player - 除玩家外的所有实体穿过末地折跃门时，给予目标区块加载票。",
+  "carpet.rule.endGatewayChunkLoader.extra.2": "item_only - 物品实体穿过末地折跃门时，给予目标区块加载票。",
+  "carpet.rule.endGatewayChunkLoader.extra.3": "off - 原版行为。",
+
+  "carpet.rule.keepWorldTickUpdate.name": "保持实体更新",
+  "carpet.rule.keepWorldTickUpdate.desc": "在服务器当前维度没有玩家的300tick后，Minecraft会停止实体相关的更新，这条规则会绕过这个限制。"
+}
