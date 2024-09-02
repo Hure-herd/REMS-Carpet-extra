@@ -34,7 +34,7 @@ public abstract class TntEntityMixin extends Entity implements TntEntityInterfac
 
 
     @Inject(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/entity/LivingEntity;)V",
-            at = @At("RETURN"))
+                at = @At("RETURN"))
     private void modifyTNTAngle(World world, double x, double y, double z, LivingEntity entity, CallbackInfo ci)
     {
         if (CarpetSettings.hardcodeTNTangle != -1.0D)
