@@ -8,6 +8,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.TntEntity;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.explosion.Explosion;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -76,15 +77,12 @@ public abstract class TntEntityMixin extends Entity implements TntEntityInterfac
 
         if (mergedTNT > 1)
             for (int i = 0; i < mergedTNT - 1; i++)
-                this.world.createExplosion(this, this.getX(), this.getY() + (double)(this.getHeight() / 16.0F),
-                        this.getZ(),
-                        4.0F,
-                        World.ExplosionSourceType.TNT);
+                this.world.createExplosion(this, this.getX(), this.getY() + (double)(this.getHeight() / 16.0F), this.getZ(), 4.0F, World.ExplosionSourceType.TNT);
     }
 
     @Inject(method = "tick", at = @At(value = "INVOKE",
-            target = "Lnet/minecraft/entity/TntEntity;setVelocity(Lnet/minecraft/util/math/Vec3d;)V",
-            ordinal = 2))
+                                        target = "Lnet/minecraft/entity/TntEntity;setVelocity(Lnet/minecraft/util/math/Vec3d;)V",
+                                        ordinal = 2))
     private void tryMergeTnt(CallbackInfo ci)
     {
         // Merge code for combining tnt into a single entity if they happen to exist in the same spot, same fuse, no motion CARPET-XCOM
@@ -98,8 +96,8 @@ public abstract class TntEntityMixin extends Entity implements TntEntityInterfac
                         Vec3d tntVelocity = entityTNTPrimed.getVelocity();
                         if(tntVelocity.x == 0 && tntVelocity.y == 0 && tntVelocity.z == 0
                                 && this.getX() == entityTNTPrimed.getX() && this.getZ() == entityTNTPrimed.getZ() && this.getY() == entityTNTPrimed.getY()
-                                && this.getFuse() == entityTNTPrimed.getFuse()){
-                            mergedTNT += ((TntEntityInterface) entityTNTPrimed).getMergedTNT();
+                                && this.getFuse()  == entityTNTPrimed.getFuse() +1){
+                            mergedTNT = ((TntEntityInterface) entityTNTPrimed).getMergedTNT();
                             entityTNTPrimed.discard();
                         }
                     }
@@ -109,8 +107,8 @@ public abstract class TntEntityMixin extends Entity implements TntEntityInterfac
     }
 
     @Inject(method = "tick", at = @At(value = "INVOKE",
-            target = "Lnet/minecraft/entity/TntEntity;setFuse(I)V",
-            ordinal = 0))
+                                        target = "Lnet/minecraft/entity/TntEntity;setFuse(I)V",
+                                        ordinal = 0))
     private void setMergeable(CallbackInfo ci)
     {
         // Merge code, merge only tnt that have had a chance to move CARPET-XCOM
