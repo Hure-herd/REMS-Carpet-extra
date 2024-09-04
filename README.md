@@ -55,6 +55,7 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 * 可选参数: `true`, `false`
 * 开启方法: `/carpet teleportToPoiWithoutPortals true`
 * 分类: `REMS` , `Experimental`
+> 和锂有冲突
 
 **移植自：**
 Copetan 的[lunaar-carpet-addons](https://github.com/Lunaar-SMP/lunaar-carpet-addons)

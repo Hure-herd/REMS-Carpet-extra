@@ -6,6 +6,8 @@
     "PistonBlockMixin",
     "PortalForcerMixin",
     "keepWorldTickUpdate",
+    "CactusBlockMixin",
+    "EnderPearlEntityMixin",
     "TntEntityMixin"
   ],
   "client": [
