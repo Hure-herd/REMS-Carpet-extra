@@ -20,11 +20,6 @@ public class REMSSettings
     public static String PearlTickets = "OFF";
 
     @Rule(
-            categories = {REMS, EXPERIMENTAL}
-    )
-    public static boolean teleportToPoiWithoutPortals = false;
-
-    @Rule(
             categories = {REMS, FEATURE}
     )
     public static boolean keepWorldTickUpdate = false;
@@ -34,4 +29,17 @@ public class REMSSettings
 
     @Rule(categories = {REMS, FEATURE, SURVIVAL})
     public static boolean mergeTNTPro = false;
+
+    @Rule(
+            categories = {REMS, FEATURE}
+    )
+    public static boolean disableBatCanSpawn = false;
+
+    @Rule(categories = {REMS, CREATIVE, SURVIVAL})
+    public static boolean CactusWrenchSound = false;
+
+    @Rule(
+            categories = {REMS, CREATIVE}
+    )
+    public static boolean disablePortalUpdate = false;
 }

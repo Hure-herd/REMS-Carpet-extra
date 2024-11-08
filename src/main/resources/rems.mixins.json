@@ -4,11 +4,13 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "PistonBlockMixin",
-    "PortalForcerMixin",
     "keepWorldTickUpdate",
     "CactusBlockMixin",
+    "BatEntityMixin",
     "EnderPearlEntityMixin",
-    "TntEntityMixin"
+    "TntEntityMixin",
+    "BlockRotatorMixin",
+    "NetherPortalBlockMixin"
   ],
   "client": [
   ],

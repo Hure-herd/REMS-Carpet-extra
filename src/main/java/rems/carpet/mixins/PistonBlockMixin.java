@@ -36,7 +36,7 @@ public abstract class PistonBlockMixin
                 int z = pos.getZ() + direction.getOffsetZ();
 
                 ChunkPos cp = new ChunkPos(x >> 4, z >> 4);
-                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 3, cp);
+                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 2, cp);
             }
         }
     }
