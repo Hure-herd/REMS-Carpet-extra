@@ -1,13 +1,18 @@
 # REMS-Carpet-Extra
 
-# carpet的命令设置
-原版carpet指令请参考[wiki](https://github.com/gnembon/fabric-carpet/wiki/Current-Available-Settings)或[汉化版本](https://github.com/SFG-Minecraft-mods-Chinese-Translation/Translation-doc/blob/master/Fabric-Carpet/Commands.md)
+## 支持版本
+|         游戏版本         | 开发状态 |
+|:--------------------:|:----:|
+|        1.20.5        |  ✔   |
+|        1.20.1        |  ✔   |
+|        1.19.4        |  ✔   |
+
+
 
 # 免责声明
 ### 这个模组的初衷是为了整合我所用到的一些功能和看到觉得想要的一些功能的合集。
 
 # 新增功能
-
 
 ## 活塞头加载(pistonBlockChunkLoader)
 开启后，当该活塞/黏性活塞产生活塞头的推出/拉回事件时，在创建推出/拉回事件的那一游戏刻为**活塞头方块所在区块**添加类型为"piston_block"，加载等级为30的加载票，持续时间为120gt（6s）。
