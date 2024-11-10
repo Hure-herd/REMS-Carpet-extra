@@ -2,9 +2,12 @@
   "carpet.category.REMS": "REMS",
 
   "carpet.rule.pistonBlockChunkLoader.name": "PistonBlockChunkLoader",
-  "carpet.rule.pistonBlockChunkLoader.desc": "Load nearby 3x3 chunks for 1.5 seconds when a piston is triggered (Centered on the piston head)",
-  "carpet.rule.pistonBlockChunkLoader.extra.0": "[ON] - When Diamond_ore is on the piston",
-  "carpet.rule.pistonBlockChunkLoader.extra.1": "[OFF] - Disable the rule",
+  "carpet.rule.pistonBlockChunkLoader.desc": "Load nearby chunks for 3 seconds when a piston is triggered (Centered on the piston head)",
+  "carpet.rule.pistonBlockChunkLoader.extra.0": "When Diamond_ore is on the piston,Load 1x1 lazy chunk",
+  "carpet.rule.pistonBlockChunkLoader.extra.1": "When Emerald_ore is on the piston,Load 3x3 chunk",
+  "carpet.rule.pistonBlockChunkLoader.extra.2": "When Gold_ore is on the piston,Load 1x1 chunk",
+  "carpet.rule.pistonBlockChunkLoader.extra.3": "[ON] - Able the rule",
+  "carpet.rule.pistonBlockChunkLoader.extra.4": "[OFF] - Disable the rule",
 
   "carpet.rule.scheduledRandomTickCactus.name": "scheduledRandomTickCactus",
   "carpet.rule.scheduledRandomTickCactus.desc": "Make cactus accepts scheduled tick as random tick",
@@ -16,7 +19,6 @@
   "carpet.rule.mergeTNTPro.extra.0": "[True] - Open this rule",
   "carpet.rule.mergeTNTPro.extra.1": "[False] - Disable the rule",
 
-
   "carpet.rule.PearlTickets.name": "PearlTickets",
   "carpet.rule.PearlTickets.desc": "This mod allows Ender Pearl entity to selectively load chunks, so your Ender Pearl won't disappear in unloaded areas!",
   "carpet.rule.PearlTickets.extra.0": "[True] - Open this rule",
@@ -26,13 +28,6 @@
   "carpet.rule.teleportToPoiWithoutPortals.desc": "Re-adds teleporting to portal POIs without portal blocks 's rule",
   "carpet.rule.teleportToPoiWithoutPortals.extra.0": "[ON] - Open this rule",
   "carpet.rule.teleportToPoiWithoutPortals.extra.1": "[False] - Disable the rule",
-
-  "carpet.rule.endGatewayChunkLoader.name": "EndGatewayChunkLoader",
-  "carpet.rule.endGatewayChunkLoader.desc" : "When the entity passes through the ender gateway, the target chunk will be loaded for 15 seconds like nether portal.",
-  "carpet.rule.endGatewayChunkLoader.extra.0" : "all - Give the target chunk a load ticket when all entities through the ender gateway.",
-  "carpet.rule.endGatewayChunkLoader.extra.1" :"except_player - Give the target chunk a load ticket when all entities except the player through the ender gateway.",
-  "carpet.rule.endGatewayChunkLoader.extra.2" :"item_only - Give the target chunk a load ticket when the player entities except the player through the ender gateway.",
-  "carpet.rule.endGatewayChunkLoader.extra.3" :"off - Vanilla action.",
 
   "carpet.rule.keepWorldTickUpdate.name": "KeepWorldTickUpdate",
   "carpet.rule.keepWorldTickUpdate.desc": "After 300 ticks without any players in the current dimension on the server, Minecraft will stop entities updates, This rule will bypass this restriction",
@@ -46,11 +41,6 @@
   "carpet.rule.CactusWrenchSound.desc" : "Play 'BLOCK_DISPENSER_LAUNCH' sound when using cactus to flip block",
   "carpet.rule.CactusWrenchSound.extra.0": "[True] - Open this rule",
   "carpet.rule.CactusWrenchSound.extra.1": "[False] - Disable the rule",
-
-  "carpet.rule.editableSign.name": "EditableSign",
-  "carpet.rule.editableSign.desc" : "Use a sign block with main hand empty when you are sneaking to reopen the sign editor",
-  "carpet.rule.editableSign.extra.0": "[True] - Open this rule",
-  "carpet.rule.editableSign.extra.1": "[False] - Disable the rule",
 
   "carpet.rule.disablePortalUpdate.name": "DisablePortalUpdate",
   "carpet.rule.disablePortalUpdate.desc" : "Nether portal blocks will not react after receiving block updates",

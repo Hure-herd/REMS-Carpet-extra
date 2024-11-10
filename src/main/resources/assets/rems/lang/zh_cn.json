@@ -2,9 +2,12 @@
   "carpet.category.REMS": "REMS",
 
   "carpet.rule.pistonBlockChunkLoader.name": "活塞头区块加载",
-  "carpet.rule.pistonBlockChunkLoader.desc": "活塞或黏性活塞被激活且能正常伸出时以活塞头将到达的区块为中心加载3x3区块持续1.5s",
-  "carpet.rule.pistonBlockChunkLoader.extra.0": "[ON] - 当活塞/黏性活塞上方有钻石原矿时",
-  "carpet.rule.pistonBlockChunkLoader.extra.1": "[OFF] - 禁用该规则",
+  "carpet.rule.pistonBlockChunkLoader.desc": "活塞或黏性活塞被激活且能正常伸出时以活塞头将到达的区块为中心加载,持续3s",
+  "carpet.rule.pistonBlockChunkLoader.extra.0": "当活塞/黏性活塞上方有钻石原矿时，弱加载1x1的区块",
+  "carpet.rule.pistonBlockChunkLoader.extra.1": "当活塞/黏性活塞上方有绿宝石原矿时，强加载3x3的区块",
+  "carpet.rule.pistonBlockChunkLoader.extra.2": "当活塞/黏性活塞上方有金原矿时，强加载1x1的区块",
+  "carpet.rule.pistonBlockChunkLoader.extra.3": "[ON] - 启用该规则",
+  "carpet.rule.pistonBlockChunkLoader.extra.4": "[OFF] - 禁用该规则",
 
   "carpet.rule.scheduledRandomTickCactus.name": "计划刻催熟仙人掌",
   "carpet.rule.scheduledRandomTickCactus.desc": "当仙人掌方块收到计划刻时仍会给予生长随机刻",
@@ -26,12 +29,6 @@
   "carpet.rule.teleportToPoiWithoutPortals.extra.0": "[True] - 打开该规则",
   "carpet.rule.teleportToPoiWithoutPortals.extra.1": "[False] - 禁用该规则",
 
-  "carpet.rule.endGatewayChunkLoader.name": "末地折跃门区块加载器",
-  "carpet.rule.endGatewayChunkLoader.desc": "当实体穿越末地折跃门时，目标区块会像下界传送门一样使目标区块获得 15 秒的加载。",
-  "carpet.rule.endGatewayChunkLoader.extra.0": "all - 所有实体穿过末地折跃门时，给予目标区块加载票。",
-  "carpet.rule.endGatewayChunkLoader.extra.1": "except_player - 除玩家外的所有实体穿过末地折跃门时，给予目标区块加载票。",
-  "carpet.rule.endGatewayChunkLoader.extra.2": "item_only - 物品实体穿过末地折跃门时，给予目标区块加载票。",
-  "carpet.rule.endGatewayChunkLoader.extra.3": "off - 原版行为。",
 
   "carpet.rule.keepWorldTickUpdate.name": "保持实体更新",
   "carpet.rule.keepWorldTickUpdate.desc": "在服务器当前维度没有玩家的300tick后，Minecraft会停止实体相关的更新，这条规则会绕过这个限制。",
@@ -45,11 +42,6 @@
   "carpet.rule.CactusWrenchSound.desc" : "使用仙人掌扳手时播放 'BLOCK_DISPENSER_LAUNCH' 音效",
   "carpet.rule.CactusWrenchSound.extra.0": "[True] - 打开该规则",
   "carpet.rule.CactusWrenchSound.extra.1": "[False] - 禁用该规则",
-
-  "carpet.rule.editableSign.name": "可编辑告示牌",
-  "carpet.rule.editableSign.desc" : "当你在潜行状态下用空手使用一个告示牌时重新打开告示牌编辑界面",
-  "carpet.rule.editableSign.extra.0": "[True] - 打开该规则",
-  "carpet.rule.editableSign.extra.1": "[False] - 禁用该规则",
 
   "carpet.rule.disablePortalUpdate.name": "禁止传送门更新",
   "carpet.rule.disablePortalUpdate.desc" : "下界传送门区块收到区块更新后不会做出反应",
