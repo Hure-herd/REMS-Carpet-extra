@@ -30,7 +30,23 @@ public abstract class PistonBlockMixin
             BlockPos nbp = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
             Block block = world.getBlockState(nbp).getBlock();
 
-            if (Registries.BLOCK.getId(block).hashCode() == PistonChunkUtility.obsidianHash)
+            if (Registries.BLOCK.getId(block).hashCode() == PistonChunkUtility.DiamondOreHash)
+            {
+                int x = pos.getX() + direction.getOffsetX();
+                int z = pos.getZ() + direction.getOffsetZ();
+
+                ChunkPos cp = new ChunkPos(x >> 4, z >> 4);
+                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 1, cp);
+            }
+            if (Registries.BLOCK.getId(block).hashCode() == PistonChunkUtility.EmeraldOreHash)
+            {
+                int x = pos.getX() + direction.getOffsetX();
+                int z = pos.getZ() + direction.getOffsetZ();
+
+                ChunkPos cp = new ChunkPos(x >> 4, z >> 4);
+                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 3, cp);
+            }
+            if (Registries.BLOCK.getId(block).hashCode() == PistonChunkUtility.GoldOreHash)
             {
                 int x = pos.getX() + direction.getOffsetX();
                 int z = pos.getZ() + direction.getOffsetZ();
