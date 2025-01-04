@@ -4,7 +4,7 @@
   "carpet.rule.pistonBlockChunkLoader.name": "PistonBlockChunkLoader",
   "carpet.rule.pistonBlockChunkLoader.desc": "Load nearby chunks for 3 seconds when a piston is triggered (Centered on the piston head)",
   "carpet.rule.pistonBlockChunkLoader.extra.0": "When Diamond_ore is on the piston,Load 1x1 lazy chunk",
-  "carpet.rule.pistonBlockChunkLoader.extra.1": "When Redstone_ore is on the piston,Load 3x3 chunk",
+  "carpet.rule.pistonBlockChunkLoader.extra.1": "When Emerald_ore is on the piston,Load 3x3 chunk",
   "carpet.rule.pistonBlockChunkLoader.extra.2": "When Gold_ore is on the piston,Load 1x1 chunk",
   "carpet.rule.pistonBlockChunkLoader.extra.3": "[ON] - Able the rule",
   "carpet.rule.pistonBlockChunkLoader.extra.4": "[OFF] - Disable the rule",
