@@ -19,6 +19,11 @@
   "carpet.rule.mergeTNTPro.extra.0": "[True] - Open this rule",
   "carpet.rule.mergeTNTPro.extra.1": "[False] - Disable the rule",
 
+  "carpet.rule.PearlTickets.name": "PearlTickets",
+  "carpet.rule.PearlTickets.desc": "This mod allows Ender Pearl entity to selectively load chunks, so your Ender Pearl won't disappear in unloaded areas!",
+  "carpet.rule.PearlTickets.extra.0": "[True] - Open this rule",
+  "carpet.rule.PearlTickets.extra.1": "[False] - Disable the rule",
+
   "carpet.rule.teleportToPoiWithoutPortals.name": "teleportToPoiWithoutPortals",
   "carpet.rule.teleportToPoiWithoutPortals.desc": "Re-adds teleporting to portal POIs without portal blocks 's rule",
   "carpet.rule.teleportToPoiWithoutPortals.extra.0": "[ON] - Open this rule",
