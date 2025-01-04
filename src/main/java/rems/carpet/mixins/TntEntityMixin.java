@@ -74,15 +74,16 @@ public abstract class TntEntityMixin extends Entity implements TntEntityInterfac
         if (LoggerRegistry.__tnt && logHelper != null)
             logHelper.onExploded(getX(), getY(), getZ(), this.getWorld().getTime());
 
-        if (mergedTNT > 1) {
-            this.getEntityWorld().createExplosion(this, this.getX(), this.getY() + (double)(this.getHeight() / 16.0F),
-                    this.getZ(), 4.0F, World.ExplosionSourceType.TNT);
-        }
+        if (mergedTNT > 1)
+            for (int i = mergedTNT; i < mergedTNT - 1; i++){
+                this.getWorld().createExplosion(this, this.getX(), this.getBodyY(0.0625),
+                        this.getZ(), 4.0F, World.ExplosionSourceType.TNT);
+            }
     }
 
     @Inject(method = "tick", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/entity/TntEntity;setVelocity(Lnet/minecraft/util/math/Vec3d;)V",
-            ordinal = 1))
+            ordinal = 2))
     private void tryMergeTnT(CallbackInfo ci)
     {
         if(REMSSettings.mergeTNTPro){
@@ -95,9 +96,9 @@ public abstract class TntEntityMixin extends Entity implements TntEntityInterfac
                         Vec3d tntVelocity = entityTNTPrimed.getVelocity();
                         if(tntVelocity.x == 0 && tntVelocity.y == 0 && tntVelocity.z == 0
                                 && this.getX() == entityTNTPrimed.getX() && this.getZ() == entityTNTPrimed.getZ() && this.getY() == entityTNTPrimed.getY()
-                                && this.getFuse() == entityTNTPrimed.getFuse() + 1){
+                                && getFuse() == entityTNTPrimed.getFuse() +1){
                             mergedTNT += ((TntEntityInterface) entityTNTPrimed).getMergedTNT();
-                            entityTNTPrimed.discard();
+                            entityTNTPrimed.remove(Entity.RemovalReason.DISCARDED);
                         }
                     }
                 }
@@ -110,7 +111,6 @@ public abstract class TntEntityMixin extends Entity implements TntEntityInterfac
             ordinal = 0))
     private void setMergeable(CallbackInfo ci)
     {
-        // Merge code, merge only tnt that have had a chance to move CARPET-XCOM
         Vec3d velocity = getVelocity();
         if(!getEntityWorld().isClient && (velocity.y != 0 || velocity.x != 0 || velocity.z != 0)){
             mergeBool = true;

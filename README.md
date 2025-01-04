@@ -21,7 +21,7 @@
 | 方块类型 |   加载大小   |
 |:----:|:--------:|
 | 钻石矿  | 弱加载1x1区块 |
-| 绿宝石矿 | 强加载3X3区块 |
+| 红石矿  | 强加载3X3区块 |
 |  金矿  | 强加载1X1区块 |
 * 默认值: `OFF`
 * 可选参数: `ON`, `OFF`
@@ -30,9 +30,11 @@
 > 如果不想使用地狱门加载链的话，此规则可作为替代方案。
 
 ## 更好的TNT合并(mergeTNTPro)
-合并大量TNT以减小实体及爆炸带来的卡顿，能显著降低mspt
+合并大量TNT以减小实体及爆炸带来的卡顿，能显著降低mspt 
 
-可能开启后TNT给予的动量会有一些小小的变化，只需要改下落点就好了（介意可以不开）
+TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovement，
+optimizedTNT和mergeTNTPro的mspt比未开启的降低5-6mspt
+
 * 默认值: `false`
 * 可选参数: `true`, `false`
 * 开启方法: `/carpet mergeTNTPro true`

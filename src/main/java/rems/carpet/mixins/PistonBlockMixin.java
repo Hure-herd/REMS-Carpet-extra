@@ -38,13 +38,13 @@ public abstract class PistonBlockMixin
                 ChunkPos cp = new ChunkPos(x >> 4, z >> 4);
                 ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 1, cp);
             }
-            if (Registries.BLOCK.getId(block).hashCode() == PistonChunkUtility.EmeraldOreHash)
+            if (Registries.BLOCK.getId(block).hashCode() == PistonChunkUtility.RedStoneOreHash)
             {
                 int x = pos.getX() + direction.getOffsetX();
                 int z = pos.getZ() + direction.getOffsetZ();
 
                 ChunkPos cp = new ChunkPos(x >> 4, z >> 4);
-                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 3, cp);
+                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKETS, cp, 3, cp);
             }
             if (Registries.BLOCK.getId(block).hashCode() == PistonChunkUtility.GoldOreHash)
             {
@@ -52,7 +52,7 @@ public abstract class PistonBlockMixin
                 int z = pos.getZ() + direction.getOffsetZ();
 
                 ChunkPos cp = new ChunkPos(x >> 4, z >> 4);
-                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 2, cp);
+                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKETS, cp, 2, cp);
             }
         }
     }

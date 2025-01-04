@@ -14,12 +14,6 @@ public class REMSSettings
     public static String pistonBlockChunkLoader = "OFF";
 
     @Rule(
-            options = {"ON", "OFF"},
-            categories = {REMS, SURVIVAL}
-    )
-    public static String PearlTickets = "OFF";
-
-    @Rule(
             categories = {REMS, FEATURE}
     )
     public static boolean keepWorldTickUpdate = false;

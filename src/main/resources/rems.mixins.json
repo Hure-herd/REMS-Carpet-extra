@@ -7,7 +7,6 @@
     "keepWorldTickUpdate",
     "CactusBlockMixin",
     "BatEntityMixin",
-    "EnderPearlEntityMixin",
     "TntEntityMixin",
     "BlockRotatorMixin",
     "NetherPortalBlockMixin"
