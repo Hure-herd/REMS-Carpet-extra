@@ -37,7 +37,7 @@ public class REMSSettings
             options = {"ON", "OFF"},
             categories = {REMS, SURVIVAL}
     )
-    public static String PearlTickets = "OFF";
+    public static String pearlTickets = "OFF";
 
     @Rule(
             categories = {REMS, FEATURE}
@@ -82,27 +82,33 @@ public class REMSSettings
     @Rule(
             categories = {REMS, CREATIVE, SURVIVAL}
     )
-    public static boolean CactusWrenchSound = false;
+    public static boolean cactusWrenchSound = false;
 
     @Rule(
             categories = {REMS, CREATIVE}
     )
     public static boolean disablePortalUpdate = false;
 
-    //@Rule(
-    //        categories = {REMS, EXPERIMENTAL}
-    //)
-    //public static boolean teleportToPoiWithoutPortals = false;
+    @Rule(
+            options = {"ON", "OFF"},
+            categories = {REMS, SURVIVAL}
+    )
+    public static boolean endGatewayChunkLoader = false;
 
     @Rule(
             categories = {REMS, EXPERIMENTAL}
     )
-    public static boolean ItemShadowing = false;
+    public static boolean itemShadowing = false;
 
     @Rule(
             categories = {REMS, FEATURE, SURVIVAL}
     )
     public static boolean sharedVillagerDiscounts = false;
+
+    //@Rule(
+    //        categories = {REMS, EXPERIMENTAL}
+    //)
+    //public static boolean teleportToPoiWithoutPortals = false;
 
     //#if MC>=12102
     //$$ @Rule(
@@ -115,6 +121,6 @@ public class REMSSettings
     //$$ @Rule(
     //$$ categories = {REMS,EXPERIMENTAL}
     //$$ )
-    //$$ public static boolean MagicBox = false;
+    //$$ public static boolean magicBox = false;
     //#endif
 }

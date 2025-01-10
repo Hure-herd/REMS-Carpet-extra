@@ -45,7 +45,7 @@ public abstract class ScreenHandlerMixin {
             )
     )
     private boolean internalOnSlotClickMixin(Slot instance, ItemStack stack) {
-        return !REMSSettings.ItemShadowing;
+        return !REMSSettings.itemShadowing;
     }
 
     @Inject(
@@ -65,6 +65,6 @@ public abstract class ScreenHandlerMixin {
             @Local(ordinal = 0) Slot slot,
             @Local(ordinal = 0) ItemStack itemStack
     ) {
-        if (REMSSettings.ItemShadowing) slot.setStack(itemStack);
+        if (REMSSettings.itemShadowing) slot.setStack(itemStack);
     }
 }

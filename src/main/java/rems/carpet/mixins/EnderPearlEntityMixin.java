@@ -65,7 +65,7 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
 
     private static int getHighestMotionBlockingY(NbtCompound nbtCompound) {
         int highestY = Integer.MIN_VALUE;
-        if ((Objects.equals(REMSSettings.PearlTickets, "ON")) && nbtCompound != null) {
+        if ((Objects.equals(REMSSettings.pearlTickets, "ON")) && nbtCompound != null) {
             for (long element : nbtCompound.getCompound("Heightmaps").getLongArray("MOTION_BLOCKING")) {
                 for (int i = 0; i < 7; i++) {
                     int y = (int)(element & 0b111111111) - 1;

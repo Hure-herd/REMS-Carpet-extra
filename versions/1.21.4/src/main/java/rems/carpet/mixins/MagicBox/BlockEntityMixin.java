@@ -41,6 +41,6 @@ public abstract class BlockEntityMixin {
             )
     )
     private boolean initMixin(BlockEntity instance, BlockState blockState) {
-        return !(REMSSettings.MagicBox && instance instanceof LecternBlockEntity);
+        return !(REMSSettings.magicBox && instance instanceof LecternBlockEntity);
     }
 }

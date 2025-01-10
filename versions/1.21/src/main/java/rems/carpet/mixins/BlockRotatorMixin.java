@@ -34,7 +34,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-// used in 1.20.5 <= mc
 @Mixin(BlockRotator.class)
 public class BlockRotatorMixin {
     @Inject(
@@ -45,7 +44,7 @@ public class BlockRotatorMixin {
             )
     )
     private static void flip_block(BlockState state, World world, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<Boolean> cir) {
-        if (REMSSettings.CactusWrenchSound) {
+        if (REMSSettings.cactusWrenchSound) {
             player.playSoundToPlayer(SoundEvents.BLOCK_DISPENSER_LAUNCH, SoundCategory.AMBIENT,1.0F, 1.0F);
         }
     }

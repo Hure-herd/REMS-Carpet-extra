@@ -43,7 +43,7 @@ public abstract class ShulkerBoxBlockMixin {
             )
     )
     private int getComparatorOutputMixin(BlockEntity entity, Operation<Integer> original) {
-        if (REMSSettings.MagicBox) {
+        if (REMSSettings.magicBox) {
             return ScreenHandler.calculateComparatorOutput((Inventory) entity);
         } else {
             return original.call(entity);

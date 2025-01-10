@@ -14,7 +14,7 @@
 
 # 新增功能
 
-## 活塞头加载(pistonBlockChunkLoader)
+## 活塞头加载(PistonBlockChunkLoader)
 开启后，当该活塞/黏性活塞头产生活塞头的推出/拉回事件时，在创建推出/拉回事件的那一游戏刻为**活塞头方块所在区块**添加类型为"piston_block"的加载票，持续时间为60gt（3s）。
 ## 活塞上面方块类型
 | 方块类型 |   加载大小   |
@@ -24,11 +24,19 @@
 |  金矿  | 强加载1X1区块 |
 * 默认值: `OFF`
 * 可选参数: `ON`, `OFF`
-* 开启方法: `/carpet PearlTickets ON`
+* 开启方法: `/carpet pistonBlockChunkLoader ON`
 * 分类: `REMS` , `Survival` 
 > 如果不想使用地狱门加载链的话，此规则可作为替代方案。
 
-## 更好的TNT合并(mergeTNTPro)
+## 末地折跃门加载(EndGatewayChunkLoader)
+当实体穿越末路之地折跃门时，目标区块会像下界传送门一样使目标区块获得3s的加载。
+* 默认值: `OFF`
+* 可选参数: `ON`, `OFF`
+* 开启方法: `/carpet endGatewayChunkLoader ON`
+* 分类: `REMS` , `Survival`
+
+
+## 更好的TNT合并(MergeTNTPro)
 合并大量TNT以减小实体及爆炸带来的卡顿，能显著降低mspt  
 TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovement,optimizedTNT和mergeTNTPro的mspt比未开启的降低5-6mspt
 
@@ -42,7 +50,7 @@ TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovemen
 该mod相比于@gnembon/carpet-extra mod的enderPearlChunkLoading功能有显著的性能提升
 * 默认值: `OFF`
 * 可选参数: `ON`, `OFF`
-* 开启方法: `/carpet pistonBlockChunkLoader ON`
+* 开启方法: `/carpet pearlTickets ON`
 * 分类: `REMS` , `Survival`
 > 如果不想使用地狱门加载链的话，此规则可作为替代方案。
  
@@ -50,7 +58,6 @@ TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovemen
 SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 
 ## 计划刻催熟植物
-## 活塞上面方块类型
 | 植物类型 | 是否支持 |    命令     |
 |:----:|:---------:|:---------:|
 | 仙人掌  |    ✔    |    /carpet scheduledRandomTickCactus true    |
@@ -61,7 +68,7 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 
 **移植自：**[OhMyVanillaMinecraft](https://github.com/hit-mc/OhMyVanillaMinecraft)
 
-## 计划刻催熟所有作物(scheduledRandomTickAllPlants)
+## 计划刻催熟所有作物(ScheduledRandomTickAllPlants)
 当所有作物方块收到计划刻时仍会给予生长随机刻
 * 默认值: `false`
 * 可选参数: `true`, `false`
@@ -70,7 +77,7 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 
 **移植自：**[OhMyVanillaMinecraft](https://github.com/hit-mc/OhMyVanillaMinecraft)
 
-## 保持实体更新(keepWorldTickUpdate)
+## 保持实体更新(KeepWorldTickUpdate)
 在服务器当前维度没有玩家的300tick后，Minecraft会停止实体相关的更新，这条规则会绕过这个限制。
 * 默认值: `false`
 * 可选参数: `true`, `false`
@@ -88,7 +95,7 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 使用仙人掌扳手时播放 'BLOCK_DISPENSER_LAUNCH' 音效
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet CactusWrenchSound true`
+* 开启方法: `/carpet cactusWrenchSound true`
 * 分类: `REMS` , `Survival` ,`Creative`
 
 ## 禁止传送门更新(DisablePortalUpdate)
@@ -103,10 +110,10 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 (Minecraft>=1.21.2时允许开启)
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet StringDupeReintroduced true`
+* 开启方法: `/carpet stringDupeReintroduced true`
 * 分类: `REMS` , `Survival` ,`Experimental`
 
-## 共享打折(sharedVillagerDiscounts)
+## 共享打折(SharedVillagerDiscounts)
 玩家将僵尸村民治疗为村民后的获得的折扣将共享给所有玩家
 * 默认值: `false`
 * 可选参数: `true`, `false`
@@ -117,16 +124,17 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 重新引入1.16.5物品栏之间交换的逻辑
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet ItemShadowing true`
+* 开启方法: `/carpet itemShadowing true`
 * 分类: `REMS` , `Experimental`
 
 **移植自：**[CrystalCarpetAddition](https://github.com/Crystal0404/CrystalCarpetAddition)
 
-## CCE抑制器(ItemShadowing)
+## CCE抑制器(MagicBox)
 重新引入类型转换的更新抑制
+(Minecraft>=1.20.6时允许开启)
 * 默认值: `false`
 * 可选参数: `true`, `false`
-* 开启方法: `/carpet MagicBox true`
+* 开启方法: `/carpet magicBox true`
 * 分类: `REMS` , `ExperimentalL`
 
 **移植自：**[CrystalCarpetAddition](https://github.com/Crystal0404/CrystalCarpetAddition)

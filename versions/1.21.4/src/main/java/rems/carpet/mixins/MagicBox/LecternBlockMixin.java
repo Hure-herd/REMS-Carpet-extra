@@ -57,7 +57,7 @@ public abstract class LecternBlockMixin extends BlockWithEntity {
             BlockState newState,
             boolean b
     ) {
-        return !REMSSettings.MagicBox;
+        return !REMSSettings.magicBox;
     }
 
     @Inject(
@@ -72,7 +72,7 @@ public abstract class LecternBlockMixin extends BlockWithEntity {
             boolean moved,
             CallbackInfo ci
     ) {
-        if (REMSSettings.MagicBox) {
+        if (REMSSettings.magicBox) {
             super.onStateReplaced(state, world, pos, newState, moved);
         }
     }

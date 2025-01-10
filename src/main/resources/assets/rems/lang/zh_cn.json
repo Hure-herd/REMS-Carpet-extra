@@ -9,6 +9,11 @@
   "carpet.rule.pistonBlockChunkLoader.extra.3": "[ON] - 启用该规则",
   "carpet.rule.pistonBlockChunkLoader.extra.4": "[OFF] - 禁用该规则",
 
+  "carpet.rule.endGatewayChunkLoader.name": "末地折跃门加载",
+  "carpet.rule.endGatewayChunkLoader.desc": "当实体穿越末路之地折跃门时，目标区块会像下界传送门一样使目标区块获得3s的加载",
+  "carpet.rule.endGatewayChunkLoader.extra.0": "[True] - Open this rule",
+  "carpet.rule.endGatewayChunkLoader.extra.1": "[False] - Disable the rule",
+
   "carpet.rule.scheduledRandomTickCactus.name": "计划刻催熟仙人掌",
   "carpet.rule.scheduledRandomTickCactus.desc": "当仙人掌方块收到计划刻时仍会给予生长随机刻",
   "carpet.rule.scheduledRandomTickCactus.extra.0": "[True] - 打开该规则",
@@ -39,10 +44,10 @@
   "carpet.rule.mergeTNTPro.extra.0": "[True] - 打开该规则",
   "carpet.rule.mergeTNTPro.extra.1": "[False] - 禁用该规则",
 
-  "carpet.rule.PearlTickets.name": "末影珍珠加载区块",
-  "carpet.rule.PearlTickets.desc": "这个mod允许末影珍珠实体选择性地加载即将通过的区块，这样珍珠炮打出的珍珠就不会因为进入未加载区块而丢失。在1.14+中可以替代地狱门加载链使用。",
-  "carpet.rule.PearlTickets.extra.0": "[ON] - 打开该规则",
-  "carpet.rule.PearlTickets.extra.1": "[OFF] - 禁用该规则",
+  "carpet.rule.pearlTickets.name": "末影珍珠加载区块",
+  "carpet.rule.pearlTickets.desc": "这个mod允许末影珍珠实体选择性地加载即将通过的区块，这样珍珠炮打出的珍珠就不会因为进入未加载区块而丢失。在1.14+中可以替代地狱门加载链使用。",
+  "carpet.rule.pearlTickets.extra.0": "[ON] - 打开该规则",
+  "carpet.rule.pearlTickets.extra.1": "[OFF] - 禁用该规则",
 
   "carpet.rule.teleportToPoiWithoutPortals.name": "POI传送门",
   "carpet.rule.teleportToPoiWithoutPortals.desc": "重新添加传送至没有传送门方块的传送门POI的规则",
@@ -58,10 +63,10 @@
   "carpet.rule.disableBatCanSpawn.extra.0": "[True] - 打开该规则",
   "carpet.rule.disableBatCanSpawn.extra.1": "[False] - 禁用该规则",
 
-  "carpet.rule.CactusWrenchSound.name": "仙人掌扳手音效",
-  "carpet.rule.CactusWrenchSound.desc" : "使用仙人掌扳手时播放 'BLOCK_DISPENSER_LAUNCH' 音效",
-  "carpet.rule.CactusWrenchSound.extra.0": "[True] - 打开该规则",
-  "carpet.rule.CactusWrenchSound.extra.1": "[False] - 禁用该规则",
+  "carpet.rule.cactusWrenchSound.name": "仙人掌扳手音效",
+  "carpet.rule.cactusWrenchSound.desc" : "使用仙人掌扳手时播放 'BLOCK_DISPENSER_LAUNCH' 音效",
+  "carpet.rule.cactusWrenchSound.extra.0": "[True] - 打开该规则",
+  "carpet.rule.cactusWrenchSound.extra.1": "[False] - 禁用该规则",
 
   "carpet.rule.disablePortalUpdate.name": "禁止传送门更新",
   "carpet.rule.disablePortalUpdate.desc" : "下界传送门区块收到区块更新后不会做出反应",
@@ -78,13 +83,13 @@
   "carpet.rule.sharedVillagerDiscounts.extra.0": "[True] - 打开该规则",
   "carpet.rule.sharedVillagerDiscounts.extra.1": "[False] - 禁用该规则",
 
-  "carpet.rule.ItemShadowing.name": "物品分身",
-  "carpet.rule.ItemShadowing.desc" : "重新引入1.16.5物品栏之间交换的逻辑",
-  "carpet.rule.ItemShadowing.extra.0": "[True] - 打开该规则",
-  "carpet.rule.ItemShadowing.extra.1": "[False] - 禁用该规则",
+  "carpet.rule.itemShadowing.name": "物品分身",
+  "carpet.rule.itemShadowing.desc" : "重新引入1.16.5物品栏之间交换的逻辑",
+  "carpet.rule.itemShadowing.extra.0": "[True] - 打开该规则",
+  "carpet.rule.itemShadowing.extra.1": "[False] - 禁用该规则",
 
-  "carpet.rule.MagicBox.name": "CCE抑制器",
-  "carpet.rule.MagicBox.desc" : "控制基于类型转换的更新抑制是否可用",
-  "carpet.rule.MagicBox.extra.0": "[True] - 打开该规则",
-  "carpet.rule.MagicBox.extra.1": "[False] - 禁用该规则"
+  "carpet.rule.magicBox.name": "CCE抑制器",
+  "carpet.rule.magicBox.desc" : "控制基于类型转换的更新抑制是否可用",
+  "carpet.rule.magicBox.extra.0": "[True] - 打开该规则",
+  "carpet.rule.magicBox.extra.1": "[False] - 禁用该规则"
 }

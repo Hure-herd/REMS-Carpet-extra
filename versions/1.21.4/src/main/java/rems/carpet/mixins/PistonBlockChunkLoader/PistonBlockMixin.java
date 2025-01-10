@@ -18,11 +18,14 @@
  * along with Carpet AMS Addition. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package rems.carpet.mixins;
+package rems.carpet.mixins.PistonBlockChunkLoader;
 
-import rems.carpet.utils.PistonChunkUtility;
-import rems.carpet.REMSSettings;
-import net.minecraft.block.*;
+
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FacingBlock;
+import net.minecraft.block.PistonBlock;
+import net.minecraft.server.world.ChunkTicketType;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -32,13 +35,16 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import rems.carpet.REMSSettings;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-// used in 1.21 <= mc
 @Mixin(PistonBlock.class)
 public abstract class PistonBlockMixin
 {
+    private static final ChunkTicketType<ChunkPos> PISTON_BLOCK_TICKET = ChunkTicketType.create("piston_block", Comparator.comparingLong(ChunkPos::toLong), 60);
+
     @Inject(method = "onSyncedBlockEvent", at = @At("HEAD"))
     private void load(BlockState state, World world, BlockPos pos, int type, int data, CallbackInfoReturnable info)
     {
@@ -54,7 +60,7 @@ public abstract class PistonBlockMixin
                 int z = pos.getZ() + direction.getOffsetZ();
 
                 ChunkPos cp = new ChunkPos(x >> 4, z >> 4);
-                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 1, cp);
+                ((ServerWorld) world).getChunkManager().addTicket(PISTON_BLOCK_TICKET, cp, 1, cp);
             }
             if (pistonBlock.isOf(Blocks.REDSTONE_ORE))
             {
@@ -62,7 +68,7 @@ public abstract class PistonBlockMixin
                 int z = pos.getZ() + direction.getOffsetZ();
 
                 ChunkPos cp = new ChunkPos(x >> 4, z >> 4);
-                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 3, cp);
+                ((ServerWorld) world).getChunkManager().addTicket(PISTON_BLOCK_TICKET, cp, 3, cp);
             }
             if (pistonBlock.isOf(Blocks.GOLD_ORE))
             {
@@ -70,7 +76,7 @@ public abstract class PistonBlockMixin
                 int z = pos.getZ() + direction.getOffsetZ();
 
                 ChunkPos cp = new ChunkPos(x >> 4, z >> 4);
-                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 2, cp);
+                ((ServerWorld) world).getChunkManager().addTicket(PISTON_BLOCK_TICKET, cp, 2, cp);
             }
         }
     }

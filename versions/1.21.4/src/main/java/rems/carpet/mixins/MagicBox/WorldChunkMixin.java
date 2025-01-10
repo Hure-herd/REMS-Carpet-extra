@@ -49,7 +49,7 @@ public abstract class WorldChunkMixin {
             )
     )
     private boolean setBlockStateMixin(boolean original, @Local(ordinal = 0) BlockEntity blockEntity) {
-        if (!REMSSettings.MagicBox) {
+        if (!REMSSettings.magicBox) {
             return original;
         }
 

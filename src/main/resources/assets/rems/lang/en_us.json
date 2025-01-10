@@ -9,6 +9,11 @@
   "carpet.rule.pistonBlockChunkLoader.extra.3": "[ON] - Able the rule",
   "carpet.rule.pistonBlockChunkLoader.extra.4": "[OFF] - Disable the rule",
 
+  "carpet.rule.endGatewayChunkLoader.name": "EndGatewayChunkLoader",
+  "carpet.rule.endGatewayChunkLoader.desc": "When the entity passes through the ender gateway, the target chunk will be loaded for 3 seconds like nether portal",
+  "carpet.rule.endGatewayChunkLoader.extra.0": "[True] - Open this rule",
+  "carpet.rule.endGatewayChunkLoader.extra.1": "[False] - Disable the rule",
+
   "carpet.rule.scheduledRandomTickCactus.name": "scheduledRandomTickCactus",
   "carpet.rule.scheduledRandomTickCactus.desc": "Make cactus accepts scheduled tick as random tick",
   "carpet.rule.scheduledRandomTickCactus.extra.0": "[True] - Open this rule",
@@ -40,10 +45,10 @@
   "carpet.rule.mergeTNTPro.extra.0": "[True] - Open this rule",
   "carpet.rule.mergeTNTPro.extra.1": "[False] - Disable the rule",
 
-  "carpet.rule.PearlTickets.name": "PearlTickets",
-  "carpet.rule.PearlTickets.desc": "This mod allows Ender Pearl entity to selectively load chunks, so your Ender Pearl won't disappear in unloaded areas!",
-  "carpet.rule.PearlTickets.extra.0": "[True] - Open this rule",
-  "carpet.rule.PearlTickets.extra.1": "[False] - Disable the rule",
+  "carpet.rule.pearlTickets.name": "PearlTickets",
+  "carpet.rule.pearlTickets.desc": "This mod allows Ender Pearl entity to selectively load chunks, so your Ender Pearl won't disappear in unloaded areas!",
+  "carpet.rule.pearlTickets.extra.0": "[True] - Open this rule",
+  "carpet.rule.pearlTickets.extra.1": "[False] - Disable the rule",
 
   "carpet.rule.teleportToPoiWithoutPortals.name": "teleportToPoiWithoutPortals",
   "carpet.rule.teleportToPoiWithoutPortals.desc": "Re-adds teleporting to portal POIs without portal blocks 's rule",
@@ -58,10 +63,10 @@
   "carpet.rule.disableBatCanSpawn.extra.0": "[True] - Open this rule",
   "carpet.rule.disableBatCanSpawn.extra.1": "[False] - Disable the rule",
 
-  "carpet.rule.CactusWrenchSound.name": "CactusWrenchSound",
-  "carpet.rule.CactusWrenchSound.desc" : "Play 'BLOCK_DISPENSER_LAUNCH' sound when using cactus to flip block",
-  "carpet.rule.CactusWrenchSound.extra.0": "[True] - Open this rule",
-  "carpet.rule.CactusWrenchSound.extra.1": "[False] - Disable the rule",
+  "carpet.rule.cactusWrenchSound.name": "CactusWrenchSound",
+  "carpet.rule.cactusWrenchSound.desc" : "Play 'BLOCK_DISPENSER_LAUNCH' sound when using cactus to flip block",
+  "carpet.rule.cactusWrenchSound.extra.0": "[True] - Open this rule",
+  "carpet.rule.cactusWrenchSound.extra.1": "[False] - Disable the rule",
 
   "carpet.rule.disablePortalUpdate.name": "DisablePortalUpdate",
   "carpet.rule.disablePortalUpdate.desc" : "Nether portal blocks will not react after receiving block updates",
@@ -78,13 +83,13 @@
   "carpet.rule.sharedVillagerDiscounts.extra.0": "[True] - Open this rule",
   "carpet.rule.sharedVillagerDiscounts.extra.1": "[False] - Disable the rule",
 
-  "carpet.rule.ItemShadowing.name": "ItemShadowing",
-  "carpet.rule.ItemShadowing.desc" : "Reintroducing the logic of swapping between inventory in 1.16.5",
-  "carpet.rule.ItemShadowing.extra.0": "[True] - Open this rule",
-  "carpet.rule.ItemShadowing.extra.1": "[False] - Disable the rule",
+  "carpet.rule.itemShadowing.name": "ItemShadowing",
+  "carpet.rule.itemShadowing.desc" : "Reintroducing the logic of swapping between inventory in 1.16.5",
+  "carpet.rule.itemShadowing.extra.0": "[True] - Open this rule",
+  "carpet.rule.itemShadowing.extra.1": "[False] - Disable the rule",
 
-  "carpet.rule.MagicBox.name": "MagicBox",
-  "carpet.rule.MagicBox.desc" : "Control whether CastSuppressor(CCESuppressor) is available",
-  "carpet.rule.MagicBox.extra.0": "[True] - Open this rule",
-  "carpet.rule.MagicBox.extra.1": "[False] - Disable the rule"
+  "carpet.rule.magicBox.name": "MagicBox",
+  "carpet.rule.magicBox.desc" : "Control whether CastSuppressor(CCESuppressor) is available",
+  "carpet.rule.magicBox.extra.0": "[True] - Open this rule",
+  "carpet.rule.magicBox.extra.1": "[False] - Disable the rule"
 }

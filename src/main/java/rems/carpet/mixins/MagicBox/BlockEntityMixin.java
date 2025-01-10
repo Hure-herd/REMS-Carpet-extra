@@ -24,7 +24,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import rems.carpet.utils.compat.DummyClass;
 import top.byteeeee.annotationtoolbox.annotation.GameVersion;
 
-@GameVersion(version = "Minecraft >= 1.21")
+@GameVersion(version = "Minecraft >= 1.21.1")
 @Mixin(DummyClass.class)
 public abstract class BlockEntityMixin {
 }
