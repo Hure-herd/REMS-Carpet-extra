@@ -18,14 +18,13 @@
  * along with Carpet REMS Addition. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package rems.carpet.mixins;
+package rems.carpet.mixins.EnderPearlChunkLoader;
 
-import net.minecraft.server.world.*;
-import rems.carpet.REMSSettings;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.server.world.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;
@@ -36,12 +35,15 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import rems.carpet.REMSSettings;
+import top.byteeeee.annotationtoolbox.annotation.GameVersion;
+
 import java.util.Comparator;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
-import net.minecraft.server.world.ChunkTicketType;
 
-
+//#if MC<12103
+@GameVersion(version = "Minecraft < 1.21.3")
 @Mixin(EnderPearlEntity.class)
 public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
     private static final ChunkTicketType<ChunkPos> ENDER_PEARL_TICKET =
@@ -81,7 +83,7 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
     private void skippyChunkLoading(CallbackInfo ci) {
         World world = this.getEntityWorld();
 
-        if (world instanceof ServerWorld) {
+        if ((Objects.equals(REMSSettings.pearlTickets, "ON")) && world instanceof ServerWorld) {
             Vec3d currPos = this.getPos().add(Vec3d.ZERO);
             Vec3d currVelocity = this.getVelocity().add(Vec3d.ZERO);
 
@@ -100,8 +102,13 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
                 NbtCompound nbtCompound1;
                 NbtCompound nbtCompound2;
                 try {
+                    //#if MC<12101
                     nbtCompound1 = serverChunkManager.threadedAnvilChunkStorage.getNbt(currChunkPos).get().orElse(null);
                     nbtCompound2 = serverChunkManager.threadedAnvilChunkStorage.getNbt(nextChunkPos).get().orElse(null);
+                    //#else
+                    //$$ nbtCompound1 = serverChunkManager.chunkLoadingManager.getNbt(currChunkPos).get().orElse(null);
+                    //$$ nbtCompound2 = serverChunkManager.chunkLoadingManager.getNbt(nextChunkPos).get().orElse(null);
+                    //#endif
                 } catch (InterruptedException | ExecutionException e) {
                     throw new RuntimeException("NbtCompound exception");
                 }
@@ -132,3 +139,4 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
     }
 
 }
+//#endif

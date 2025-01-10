@@ -19,7 +19,7 @@
     "TntEntityMixin",
     "BlockRotatorMixin",
     "NetherPortalBlockMixin",
-    "EnderPearlEntityMixin",
+    "EnderPearlChunkLoader.EnderPearlEntityMixin",
     "TripwireHookBlockMixin"
   ],
   "client": [

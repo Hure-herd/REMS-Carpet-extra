@@ -22,6 +22,7 @@ package rems.carpet;
 
 import static rems.carpet.utils.REMSRuleCategory.*;
 import carpet.api.settings.Rule;
+import top.byteeeee.annotationtoolbox.annotation.GameVersion;
 
 
 public class REMSSettings
@@ -33,11 +34,14 @@ public class REMSSettings
     )
     public static String pistonBlockChunkLoader = "OFF";
 
+    //#if MC<12103
+    @GameVersion(version = "Minecraft < 1.21.3")
     @Rule(
             options = {"ON", "OFF"},
             categories = {REMS, SURVIVAL}
     )
     public static String pearlTickets = "OFF";
+    //#endif
 
     @Rule(
             categories = {REMS, FEATURE}
@@ -93,7 +97,7 @@ public class REMSSettings
             options = {"ON", "OFF"},
             categories = {REMS, SURVIVAL}
     )
-    public static boolean endGatewayChunkLoader = false;
+    public static String endGatewayChunkLoader = "OFF";
 
     @Rule(
             categories = {REMS, EXPERIMENTAL}
