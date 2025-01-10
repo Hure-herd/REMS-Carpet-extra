@@ -130,7 +130,7 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 **移植自：**[CrystalCarpetAddition](https://github.com/Crystal0404/CrystalCarpetAddition)
 
 ## CCE抑制器(MagicBox)
-重新引入类型转换的更新抑制
+重新引入类型转换的更新抑制  
 (Minecraft>=1.20.6时允许开启)
 * 默认值: `false`
 * 可选参数: `true`, `false`
