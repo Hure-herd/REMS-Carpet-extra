@@ -42,12 +42,9 @@ import java.util.Comparator;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
-//#if MC<12103
 @GameVersion(version = "Minecraft < 1.21.3")
 @Mixin(EnderPearlEntity.class)
 public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
-    private static final ChunkTicketType<ChunkPos> ENDER_PEARL_TICKET =
-            ChunkTicketType.create("ender_pearl", Comparator.comparingLong(ChunkPos::toLong), 2);
 
     private boolean sync = true;
     private Vec3d realPos = null;
@@ -56,6 +53,9 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
     protected EnderPearlEntityMixin(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
     }
+
+    private static final ChunkTicketType<ChunkPos> ENDER_PEARL_TICKET =
+            ChunkTicketType.create("ender_pearl", Comparator.comparingLong(ChunkPos::toLong), 2);
 
     private static boolean isEntityTickingChunk(WorldChunk chunk) {
         //#if MC<12001
@@ -70,7 +70,11 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
         if ((Objects.equals(REMSSettings.pearlTickets, "ON")) && nbtCompound != null) {
             for (long element : nbtCompound.getCompound("Heightmaps").getLongArray("MOTION_BLOCKING")) {
                 for (int i = 0; i < 7; i++) {
+                    //#if MC<12101
                     int y = (int)(element & 0b111111111) - 1;
+                    //#else
+                    //$$ int y = (int)(element & 0b111111111);
+                    //#endif
                     if (y > highestY) highestY = y;
                     element = element >> 9;
                 }
@@ -137,6 +141,5 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
             this.realVelocity = nextVelocity;
         }
     }
-
 }
-//#endif
+

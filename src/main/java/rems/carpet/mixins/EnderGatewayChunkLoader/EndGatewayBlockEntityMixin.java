@@ -40,7 +40,7 @@ import java.util.Objects;
 
 @Mixin(EndGatewayBlockEntity.class)
 public class EndGatewayBlockEntityMixin {
-
+    //#if MC<121
     private static final ChunkTicketType<BlockPos> TheEndGateway =
             ChunkTicketType.create("TheEndGateway", Comparator.comparingLong(ChunkPos::toLong), 60);
 
@@ -52,4 +52,5 @@ public class EndGatewayBlockEntityMixin {
             REMSServer.getServer().getWorld(World.END).getChunkManager().addTicket(TheEndGateway, new ChunkPos(pos), 3, blockPos);
         }
     }
+    //#endif
 }

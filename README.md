@@ -3,8 +3,10 @@
 ## 支持版本
 |  游戏版本  | 开发状态 |
 |:------:|:----:|
-| 1.21.1 |  ✔   |
 | 1.21.4 |  ✔   |
+| 1.21.3 |  ✔   |
+| 1.21.2 |  ✔   |
+| 1.21.1 |  ✔   |
 |  1.21  |  ✔   |
 | 1.20.6 |  ✔   |
 | 1.20.1 |  ✔   |
@@ -28,14 +30,6 @@
 * 分类: `REMS` , `Survival` 
 > 如果不想使用地狱门加载链的话，此规则可作为替代方案。
 
-## 末地折跃门加载(EndGatewayChunkLoader)
-当实体穿越末路之地折跃门时，目标区块会像下界传送门一样使目标区块获得3s的加载。
-* 默认值: `OFF`
-* 可选参数: `ON`, `OFF`
-* 开启方法: `/carpet endGatewayChunkLoader ON`
-* 分类: `REMS` , `Survival`
-
-
 ## 更好的TNT合并(MergeTNTPro)
 合并大量TNT以减小实体及爆炸带来的卡顿，能显著降低mspt  
 TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovement,optimizedTNT和mergeTNTPro的mspt比未开启的降低5-6mspt
@@ -47,15 +41,25 @@ TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovemen
 
 ## 末影珍珠加载(PearlTickets)
 这个mod允许末影珍珠实体选择性地加载即将通过的区块，这样珍珠炮打出的珍珠就不会因为进入未加载区块而丢失。在1.14+中可以替代地狱门加载链使用。   
-该mod相比于@gnembon/carpet-extra mod的enderPearlChunkLoading功能有显著的性能提升
+该mod相比于@gnembon/carpet-extra mod的enderPearlChunkLoading功能有显著的性能提升。  
+(Minecraft>=1.21.2时开启后，可以显著提升珍珠炮的性能)
 * 默认值: `OFF`
 * 可选参数: `ON`, `OFF`
 * 开启方法: `/carpet pearlTickets ON`
 * 分类: `REMS` , `Survival`
-> 如果不想使用地狱门加载链的话，此规则可作为替代方案。
+
  
 **移植自：**
 SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
+
+## 末地折跃门加载(EndGatewayChunkLoader)
+当实体穿越末路之地折跃门时，目标区块会像下界传送门一样使目标区块获得3s的加载。
+(Minecraft<1.21时允许开启)
+* 默认值: `OFF`
+* 可选参数: `ON`, `OFF`
+* 开启方法: `/carpet endGatewayChunkLoader ON`
+* 分类: `REMS` , `Survival`
+
 
 ## 计划刻催熟植物
 | 植物类型 | 是否支持 |    命令     |

@@ -34,14 +34,11 @@ public class REMSSettings
     )
     public static String pistonBlockChunkLoader = "OFF";
 
-    //#if MC<12103
-    @GameVersion(version = "Minecraft < 1.21.3")
     @Rule(
             options = {"ON", "OFF"},
             categories = {REMS, SURVIVAL}
     )
     public static String pearlTickets = "OFF";
-    //#endif
 
     @Rule(
             categories = {REMS, FEATURE}
@@ -92,12 +89,13 @@ public class REMSSettings
             categories = {REMS, CREATIVE}
     )
     public static boolean disablePortalUpdate = false;
-
+    //#if MC<121
     @Rule(
             options = {"ON", "OFF"},
             categories = {REMS, SURVIVAL}
     )
     public static String endGatewayChunkLoader = "OFF";
+    //#endif
 
     @Rule(
             categories = {REMS, EXPERIMENTAL}
