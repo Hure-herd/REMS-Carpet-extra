@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "rems-additions",
-  "version": "1.0.0",
+  "version": "1.0.4",
 
-  "name": "RMES-additions",
+  "name": "RMES-Carpet-additions",
   "description": "Additional, less vanilla additions to the carpet mod",
   "authors": [
     "gnembon,Hureherd"
