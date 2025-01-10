@@ -14,6 +14,27 @@
   "carpet.rule.scheduledRandomTickCactus.extra.0": "[True] - Open this rule",
   "carpet.rule.scheduledRandomTickCactus.extra.1": "[False] - Disable the rule",
 
+
+  "carpet.rule.scheduledRandomTickBamboo.name": "scheduledRandomTickBamboo",
+  "carpet.rule.scheduledRandomTickBamboo.desc": "Make bamboo accepts scheduled tick as random tick",
+  "carpet.rule.scheduledRandomTickBamboo.extra.0": "[True] - Open this rule",
+  "carpet.rule.scheduledRandomTickBamboo.extra.1": "[False] - Disable the rule",
+
+  "carpet.rule.scheduledRandomTickChorusFlower.name": "scheduledRandomTickChorusFlower",
+  "carpet.rule.scheduledRandomTickChorusFlower.desc": "Make chorus flower accepts scheduled tick as random tick",
+  "carpet.rule.scheduledRandomTickChorusFlower.extra.0": "[True] - Open this rule",
+  "carpet.rule.scheduledRandomTickChorusFlower.extra.1": "[False] - Disable the rule",
+
+  "carpet.rule.scheduledRandomTickSugarCane.name": "scheduledRandomTickSugarCane",
+  "carpet.rule.scheduledRandomTickSugarCane.desc": "Make sugar cane accepts scheduled tick as random tick",
+  "carpet.rule.scheduledRandomTickSugarCane.extra.0": "[True] - Open this rule",
+  "carpet.rule.scheduledRandomTickSugarCane.extra.1": "[False] - Disable the rule",
+
+  "carpet.rule.scheduledRandomTickAllPlants.name": "scheduledRandomTickAllPlants",
+  "carpet.rule.scheduledRandomTickAllPlants.desc": "Make all plants accepts scheduled tick as random tick",
+  "carpet.rule.scheduledRandomTickAllPlants.extra.0": "[True] - Open this rule",
+  "carpet.rule.scheduledRandomTickAllPlants.extra.1": "[False] - Disable the rule",
+
   "carpet.rule.mergeTNTPro.name": "MergeTNTPro",
   "carpet.rule.mergeTNTPro.desc": "Combined with large amounts of TNT to reduce lag caused by entities and explosions",
   "carpet.rule.mergeTNTPro.extra.0": "[True] - Open this rule",
@@ -45,5 +66,10 @@
   "carpet.rule.disablePortalUpdate.name": "DisablePortalUpdate",
   "carpet.rule.disablePortalUpdate.desc" : "Nether portal blocks will not react after receiving block updates",
   "carpet.rule.disablePortalUpdate.extra.0": "[True] - Open this rule",
-  "carpet.rule.disablePortalUpdate.extra.1": "[False] - Disable the rule"
+  "carpet.rule.disablePortalUpdate.extra.1": "[False] - Disable the rule",
+
+  "carpet.rule.stringDupeReintroduced.name": "StringDupeReintroduced",
+  "carpet.rule.stringDupeReintroduced.desc" : "Reintroduced the string dupe feature, you can use this rule to continue using the string farm",
+  "carpet.rule.stringDupeReintroduced.extra.0": "[True] - Open this rule",
+  "carpet.rule.stringDupeReintroduced.extra.1": "[False] - Disable the rule"
 }

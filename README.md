@@ -3,16 +3,14 @@
 ## 支持版本
 |  游戏版本  | 开发状态 |
 |:------:|:----:|
+| 1.21.1 |  ✔   |
+| 1.21.4 |  ✔   |
 |  1.21  |  ✔   |
-| 1.20.5 |  ✔   |
+| 1.20.6 |  ✔   |
 | 1.20.1 |  ✔   |
 |  1.20  |  ✔   |
 | 1.19.4 |  ✔   |
 
-
-
-# 免责声明
-### 这个模组的初衷是为了整合我所用到的一些功能和看到觉得想要的一些功能的合集。
 
 # 新增功能
 
@@ -31,10 +29,8 @@
 > 如果不想使用地狱门加载链的话，此规则可作为替代方案。
 
 ## 更好的TNT合并(mergeTNTPro)
-合并大量TNT以减小实体及爆炸带来的卡顿，能显著降低mspt 
-
-TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovement，
-optimizedTNT和mergeTNTPro的mspt比未开启的降低5-6mspt
+合并大量TNT以减小实体及爆炸带来的卡顿，能显著降低mspt  
+TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovement,optimizedTNT和mergeTNTPro的mspt比未开启的降低5-6mspt
 
 * 默认值: `false`
 * 可选参数: `true`, `false`
@@ -42,8 +38,7 @@ optimizedTNT和mergeTNTPro的mspt比未开启的降低5-6mspt
 * 分类: `REMS`, `Feature`, `Survival`
 
 ## 末影珍珠加载(PearlTickets)
-这个mod允许末影珍珠实体选择性地加载即将通过的区块，这样珍珠炮打出的珍珠就不会因为进入未加载区块而丢失。在1.14+中可以替代地狱门加载链使用。
-
+这个mod允许末影珍珠实体选择性地加载即将通过的区块，这样珍珠炮打出的珍珠就不会因为进入未加载区块而丢失。在1.14+中可以替代地狱门加载链使用。   
 该mod相比于@gnembon/carpet-extra mod的enderPearlChunkLoading功能有显著的性能提升
 * 默认值: `OFF`
 * 可选参数: `ON`, `OFF`
@@ -59,6 +54,42 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 * 默认值: `false`
 * 可选参数: `true`, `false`
 * 开启方法: `/carpet scheduledRandomTickCactus true`
+* 分类: `REMS`, `Feature`, `Survival`
+
+**移植自：**[OhMyVanillaMinecraft](https://github.com/hit-mc/OhMyVanillaMinecraft)
+
+## 计划刻催熟竹子(scheduledRandomTickBamboo)
+当竹子方块收到计划刻时仍会给予生长随机刻
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet scheduledRandomTickBamboo true`
+* 分类: `REMS`, `Feature`, `Survival`
+
+**移植自：**[OhMyVanillaMinecraft](https://github.com/hit-mc/OhMyVanillaMinecraft)
+
+## 计划刻催熟紫颂花(scheduledRandomTickChorusFlower)
+当紫颂花方块收到计划刻时仍会给予生长随机刻
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet scheduledRandomTickChorusFlower true`
+* 分类: `REMS`, `Feature`, `Survival`
+
+**移植自：**[OhMyVanillaMinecraft](https://github.com/hit-mc/OhMyVanillaMinecraft)
+
+## 计划刻催熟甘蔗(scheduledRandomTickSugarCane)
+当甘蔗方块收到计划刻时仍会给予生长随机刻
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet scheduledRandomTickSugarCane true`
+* 分类: `REMS`, `Feature`, `Survival`
+
+**移植自：**[OhMyVanillaMinecraft](https://github.com/hit-mc/OhMyVanillaMinecraft)
+
+## 计划刻催熟所有作物(scheduledRandomTickAllPlants)
+当所有作物方块收到计划刻时仍会给予生长随机刻
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet scheduledRandomTickAllPlants true`
 * 分类: `REMS`, `Feature`, `Survival`
 
 **移植自：**[OhMyVanillaMinecraft](https://github.com/hit-mc/OhMyVanillaMinecraft)
@@ -91,6 +122,13 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 * 开启方法: `/carpet disablePortalUpdate true`
 * 分类: `REMS` , `Survival` ,`Experimental`
 
+## 重新引入拌线骗特性(StringDupeReintroduced)
+重新引入拌线骗特性，可以通过此规则来继续使用刷线机  
+(Minecraft>=1.21.2时启用)
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet StringDupeReintroduced true`
+* 分类: `REMS` , `Survival` ,`Experimental`
 
 # Works Cited
 - gnembon [fabric-carpet](https://github.com/gnembon/fabric-carpet)

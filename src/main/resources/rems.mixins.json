@@ -5,11 +5,16 @@
   "mixins": [
     "PistonBlockMixin",
     "keepWorldTickUpdate",
-    "CactusBlockMixin",
+    "scheduledRandomTick.CactusBlockMixin",
+    "scheduledRandomTick.BambooBlockMixin",
+    "scheduledRandomTick.ChorusFlowerBlockMixin",
+    "scheduledRandomTick.SugarCaneBlockMixin",
     "BatEntityMixin",
     "TntEntityMixin",
     "BlockRotatorMixin",
-    "NetherPortalBlockMixin"
+    "NetherPortalBlockMixin",
+    "EnderPearlEntityMixin",
+    "TripwireHookBlockMixin"
   ],
   "client": [
   ],

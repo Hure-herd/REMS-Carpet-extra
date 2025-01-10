@@ -14,6 +14,26 @@
   "carpet.rule.scheduledRandomTickCactus.extra.0": "[True] - 打开该规则",
   "carpet.rule.scheduledRandomTickCactus.extra.1": "[False] - 禁用该规则",
 
+  "carpet.rule.scheduledRandomTickBamboo.name": "计划刻催熟竹子",
+  "carpet.rule.scheduledRandomTickBamboo.desc": "当竹子方块收到计划刻时仍会给予生长随机刻",
+  "carpet.rule.scheduledRandomTickBamboo.extra.0": "[True] - 打开该规则",
+  "carpet.rule.scheduledRandomTickBamboo.extra.1": "[False] - 禁用该规则",
+
+  "carpet.rule.scheduledRandomTickChorusFlower.name": "计划刻催熟紫颂花",
+  "carpet.rule.scheduledRandomTickChorusFlower.desc": "当紫颂花方块收到计划刻时仍会给予生长随机刻",
+  "carpet.rule.scheduledRandomTickChorusFlower.extra.0": "[True] - 打开该规则",
+  "carpet.rule.scheduledRandomTickChorusFlower.extra.1": "[False] - 禁用该规则",
+
+  "carpet.rule.scheduledRandomTickSugarCane.name": "计划刻催熟甘蔗",
+  "carpet.rule.scheduledRandomTickSugarCane.desc": "当甘蔗方块收到计划刻时仍会给予生长随机刻",
+  "carpet.rule.scheduledRandomTickSugarCane.extra.0": "[True] - 打开该规则",
+  "carpet.rule.scheduledRandomTickSugarCane.extra.1": "[False] - 禁用该规则",
+
+  "carpet.rule.scheduledRandomTickAllPlants.name": "计划刻催熟所有作物",
+  "carpet.rule.scheduledRandomTickAllPlants.desc": "当所有作物方块收到计划刻时仍会给予生长随机刻",
+  "carpet.rule.scheduledRandomTickAllPlants.extra.0": "[True] - 打开该规则",
+  "carpet.rule.scheduledRandomTickAllPlants.extra.1": "[False] - 禁用该规则",
+
   "carpet.rule.mergeTNTPro.name": "更好的合并TNT",
   "carpet.rule.mergeTNTPro.desc": "合并大量TNT以减小实体及爆炸带来的卡顿",
   "carpet.rule.mergeTNTPro.extra.0": "[True] - 打开该规则",
@@ -46,5 +66,10 @@
   "carpet.rule.disablePortalUpdate.name": "禁止传送门更新",
   "carpet.rule.disablePortalUpdate.desc" : "下界传送门区块收到区块更新后不会做出反应",
   "carpet.rule.disablePortalUpdate.extra.0": "[True] - 打开该规则",
-  "carpet.rule.disablePortalUpdate.extra.1": "[False] - 禁用该规则"
+  "carpet.rule.disablePortalUpdate.extra.1": "[False] - 禁用该规则",
+
+  "carpet.rule.stringDupeReintroduced.name": "重新引入拌线骗特性",
+  "carpet.rule.stringDupeReintroduced.desc" : "重新引入拌线骗特性，可以通过此规则来继续使用刷线机",
+  "carpet.rule.stringDupeReintroduced.extra.0": "[True] - 打开该规则",
+  "carpet.rule.stringDupeReintroduced.extra.1": "[False] - 禁用该规则"
 }
