@@ -106,12 +106,21 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 * 开启方法: `/carpet StringDupeReintroduced true`
 * 分类: `REMS` , `Survival` ,`Experimental`
 
+## 共享打折(sharedVillagerDiscounts)
+玩家将僵尸村民治疗为村民后的获得的折扣将共享给所有玩家
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet sharedVillagerDiscounts true`
+* 分类: `REMS` , `Survival`,`Feature`
+
 ## 物品分身(ItemShadowing)
 重新引入1.16.5物品栏之间交换的逻辑
 * 默认值: `false`
 * 可选参数: `true`, `false`
 * 开启方法: `/carpet ItemShadowing true`
 * 分类: `REMS` , `Experimental`
+
+**移植自：**[CrystalCarpetAddition](https://github.com/Crystal0404/CrystalCarpetAddition)
 
 ## CCE抑制器(ItemShadowing)
 重新引入类型转换的更新抑制
@@ -120,15 +129,11 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 * 开启方法: `/carpet MagicBox true`
 * 分类: `REMS` , `ExperimentalL`
 
-## 共享打折(sharedVillagerDiscounts)
-玩家将僵尸村民治疗为村民后的获得的折扣将共享给所有玩家
-* 默认值: `false`
-* 可选参数: `true`, `false`
-* 开启方法: `/carpet sharedVillagerDiscounts true`
-* 分类: `REMS` , `Survival`,`Feature`
+**移植自：**[CrystalCarpetAddition](https://github.com/Crystal0404/CrystalCarpetAddition)
 
 # Works Cited
 - gnembon [fabric-carpet](https://github.com/gnembon/fabric-carpet)
 - Copetan [lunaar-carpet-addons](https://github.com/Lunaar-SMP/lunaar-carpet-addons)
 - 1024-byteeeee [Carpet-AMS-Addition](https://github.com/Minecraft-AMS/Carpet-AMS-Addition)
 - totorewa [totos-carpet-tweaks](https://github.com/totorewa/totos-carpet-tweaks)
+- Crystal_0404 [CrystalCarpetAddition](https://github.com/Crystal0404/CrystalCarpetAddition)
