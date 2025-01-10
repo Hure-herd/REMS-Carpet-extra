@@ -1,3 +1,23 @@
+/*
+ * This file is part of the Carpet REMS Addition project, licensed under the
+ * GNU Lesser General Public License v3.0
+ *
+ * Copyright (C) 2025 A Minecraft Server and contributors
+ *
+ * Carpet REMS Addition is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Carpet REMS Addition is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with Carpet REMS Addition. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package rems.carpet.mixins;
 
 import rems.carpet.REMSSettings;
@@ -44,7 +64,7 @@ public abstract class PistonBlockMixin
                 int z = pos.getZ() + direction.getOffsetZ();
 
                 ChunkPos cp = new ChunkPos(x >> 4, z >> 4);
-                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKETS, cp, 3, cp);
+                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 3, cp);
             }
             if (Registries.BLOCK.getId(block).hashCode() == PistonChunkUtility.GoldOreHash)
             {
@@ -52,7 +72,7 @@ public abstract class PistonBlockMixin
                 int z = pos.getZ() + direction.getOffsetZ();
 
                 ChunkPos cp = new ChunkPos(x >> 4, z >> 4);
-                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKETS, cp, 2, cp);
+                ((ServerWorld) world).getChunkManager().addTicket(PistonChunkUtility.PISTON_BLOCK_TICKET, cp, 2, cp);
             }
         }
     }

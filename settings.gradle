@@ -1,10 +1,39 @@
+import groovy.json.JsonSlurper
+
 pluginManagement {
-    repositories {
-        jcenter()
-        maven {
-            name = 'Fabric'
-            url = 'https://maven.fabricmc.net/'
-        }
-        gradlePluginPortal()
-    }
+	def pluginMappings = [
+		"com.replaymod.preprocess" : "com.github.1024-byteeeee:preprocessor"
+	]
+
+	repositories {
+		maven {
+			name = 'Fabric'
+			url = 'https://maven.fabricmc.net/'
+		}
+		maven {
+			name = 'Jitpack'
+			url = "https://jitpack.io"
+		}
+		mavenCentral()
+		gradlePluginPortal()
+	}
+
+	resolutionStrategy {
+		eachPlugin {
+			switch (requested.id.id) {
+				case { pluginMappings.containsKey(it) } :
+				useModule("${pluginMappings[requested.id.id]}:${requested.version}")
+				break
+			}
+		}
+	}
+}
+
+def versionsFilePath = 'minecraftVersions' + '.json'
+def versions = new JsonSlurper().parseText(file(versionsFilePath).text)
+versions.versions.each {
+	version -> include(":$version")
+	def proj = project(":$version")
+	proj.projectDir = file("versions/$version")
+	proj.buildFileName = "../../common.gradle"
 }

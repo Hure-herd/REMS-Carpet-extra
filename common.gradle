@@ -1,0 +1,183 @@
+apply plugin: 'maven-publish'
+apply plugin: 'com.github.hierynomus.license'
+apply plugin: 'fabric-loom'
+apply plugin: 'com.replaymod.preprocess'
+
+int mcVersion = 1
+
+preprocess {
+	mcVersion = vars.get()["MC"] as int
+}
+
+repositories {
+	maven {
+		url = 'https://api.modrinth.com/maven'
+	}
+	maven {
+		url = 'https://masa.dy.fi/maven'
+	}
+	maven {
+		url = 'https://jitpack.io'
+	}
+}
+
+// https://github.com/FabricMC/fabric-loader/issues/783
+configurations {
+	modRuntimeOnly.exclude group: 'net.fabricmc', module: 'fabric-loader'
+}
+
+dependencies {
+	// loom
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	// mods
+	//modImplementation("maven.modrinth:Carpet:${project.carpet_core_version}") // modrinth
+	modImplementation "carpet:fabric-carpet:${project.carpet_core_version}" // masa
+
+	// library mods
+	include(modImplementation("com.github.1024-byteeeee:AnnotationToolBox:${project.annotationtoolbox_version}"))
+	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${project.mixinextras_version}")))
+
+	// Dependencies
+	include(implementation("com.esotericsoftware.yamlbeans:yamlbeans:${project.yamlbeans_version}"))
+}
+
+loom {
+	runConfigs.all {
+		// to make sure it generates all "Minecraft Client (:subproject_name)" applications
+		ideConfigGenerated = true
+		runDir '../../run'
+		vmArgs '-Dmixin.debug.export=true'
+	}
+
+	runs {
+        mixinAudit {
+            server()
+            vmArgs '-Dcarpetremsaddition.mixin_audit=true'
+            ideConfigGenerated false
+        }
+        mixinAuditClient {
+            client()
+            vmArgs '-Dcarpetremsaddition.mixin_audit=true'
+            ideConfigGenerated false
+        }
+    }
+
+	accessWidenerPath = file("carpetremsaddition.accesswidener")
+}
+
+JavaVersion JAVA_VERSION
+if (mcVersion >= 12005) {
+	JAVA_VERSION = JavaVersion.VERSION_21
+} else if (mcVersion >= 11800) {
+	JAVA_VERSION = JavaVersion.VERSION_17
+} else if (mcVersion >= 11700) {
+	JAVA_VERSION = JavaVersion.VERSION_16
+} else {
+	JAVA_VERSION = JavaVersion.VERSION_1_8
+}
+JavaVersion MIXIN_COMPATIBILITY_LEVEL = JAVA_VERSION
+
+String versionSuffix = ''
+// detect github action environment variables
+// https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables
+if (System.getenv("BUILD_RELEASE") != "true") {
+	String buildNumber = System.getenv("BUILD_ID")
+	versionSuffix += buildNumber != null ? ('+build.' + buildNumber):''
+}
+String fullModVersion = project.mod_version + versionSuffix
+
+version = 'v' + fullModVersion
+group = project.maven_group
+archivesBaseName = project.archives_base_name + '-mc' + project.minecraft_version + '-fabric'
+
+processResources {
+	from "carpetremsaddition.accesswidener"
+
+	inputs.property "version", fullModVersion
+
+	filesMatching("fabric.mod.json") {
+		def valueMap = [
+			"id": project.mod_id,
+			"name": project.mod_name,
+			"version": fullModVersion,
+			"carpet_dependency": project.carpet_dependency,
+			"minecraft_dependency": project.minecraft_dependency,
+		]
+		expand valueMap
+	}
+
+	filesMatching("rms.mixins.json") {
+		filter {
+			text -> text.replace("/*JAVA_VERSION*/", "JAVA_${MIXIN_COMPATIBILITY_LEVEL.ordinal() + 1}")
+		}
+	}
+}
+
+java {
+	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+	// if it is present.
+	// If you remove this line, sources will not be generated.
+	withSourcesJar()
+	sourceCompatibility = JAVA_VERSION
+	targetCompatibility = JAVA_VERSION
+}
+
+jar {
+	from(rootProject.file('LICENSE')) {
+		rename { "${it}_${project.archivesBaseName}"}
+	}
+}
+
+// https://github.com/hierynomus/license-gradle-plugin
+license {
+	// use "gradle licenseFormat" to apply license headers
+	header = rootProject.file('HEADER.txt')
+	include '**/*.java'
+	skipExistingHeaders = true
+
+	headerDefinitions {
+		// ref: https://github.com/mathieucarbou/license-maven-plugin/blob/4c42374bb737378f5022a3a36849d5e23ac326ea/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/header/HeaderType.java#L48
+		// modification: add a newline at the end
+		SLASHSTAR_STYLE_NEWLINE {
+			firstLine = "/*"
+			beforeEachLine = " * "
+			endLine = " */" + System.lineSeparator()
+			afterEachLine = ""
+			skipLinePattern = null
+			firstLineDetectionPattern = "(\\s|\\t)*/\\*.*\$"
+			lastLineDetectionPattern = ".*\\*/(\\s|\\t)*\$"
+			allowBlankLines = false
+			isMultiline = true
+			padLines = false
+		}
+	}
+	mapping {
+		java = 'SLASHSTAR_STYLE_NEWLINE'
+	}
+	ext {
+		name = project.mod_name
+		author = 'A Minecraft Server'
+		year = Calendar.getInstance().get(Calendar.YEAR).toString()
+	}
+}
+classes.dependsOn licenseFormatMain
+testClasses.dependsOn licenseFormatTest
+
+// configure the maven publication
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			artifactId archivesBaseName
+			from components.java
+		}
+	}
+
+	// select the repositories you want to publish to
+	repositories {
+		// uncomment to publish to the local maven
+		// mavenLocal()
+	}
+}
