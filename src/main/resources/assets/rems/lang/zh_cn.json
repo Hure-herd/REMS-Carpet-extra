@@ -71,5 +71,20 @@
   "carpet.rule.stringDupeReintroduced.name": "重新引入拌线骗特性",
   "carpet.rule.stringDupeReintroduced.desc" : "重新引入拌线骗特性，可以通过此规则来继续使用刷线机",
   "carpet.rule.stringDupeReintroduced.extra.0": "[True] - 打开该规则",
-  "carpet.rule.stringDupeReintroduced.extra.1": "[False] - 禁用该规则"
+  "carpet.rule.stringDupeReintroduced.extra.1": "[False] - 禁用该规则",
+
+  "carpet.rule.sharedVillagerDiscounts.name": "共享打折",
+  "carpet.rule.sharedVillagerDiscounts.desc" : "玩家将僵尸村民治疗为村民后的获得的折扣将共享给所有玩家",
+  "carpet.rule.sharedVillagerDiscounts.extra.0": "[True] - 打开该规则",
+  "carpet.rule.sharedVillagerDiscounts.extra.1": "[False] - 禁用该规则",
+
+  "carpet.rule.ItemShadowing.name": "物品分身",
+  "carpet.rule.ItemShadowing.desc" : "重新引入1.16.5物品栏之间交换的逻辑",
+  "carpet.rule.ItemShadowing.extra.0": "[True] - 打开该规则",
+  "carpet.rule.ItemShadowing.extra.1": "[False] - 禁用该规则",
+
+  "carpet.rule.MagicBox.name": "CCE抑制器",
+  "carpet.rule.MagicBox.desc" : "控制基于类型转换的更新抑制是否可用",
+  "carpet.rule.MagicBox.extra.0": "[True] - 打开该规则",
+  "carpet.rule.MagicBox.extra.1": "[False] - 禁用该规则"
 }

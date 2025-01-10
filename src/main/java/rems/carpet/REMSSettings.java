@@ -70,7 +70,7 @@ public class REMSSettings
     public static boolean scheduledRandomTickAllPlants = false;
 
     @Rule(
-            categories = {REMS, FEATURE, SURVIVAL}
+            categories = {REMS, FEATURE, SURVIVAL,TNT}
     )
     public static boolean mergeTNTPro = false;
 
@@ -89,15 +89,32 @@ public class REMSSettings
     )
     public static boolean disablePortalUpdate = false;
 
+    //@Rule(
+    //        categories = {REMS, EXPERIMENTAL}
+    //)
+    //public static boolean teleportToPoiWithoutPortals = false;
+
     @Rule(
             categories = {REMS, EXPERIMENTAL}
     )
-    public static boolean teleportToPoiWithoutPortals = false;
+    public static boolean ItemShadowing = false;
+
+    @Rule(
+            categories = {REMS, FEATURE, SURVIVAL}
+    )
+    public static boolean sharedVillagerDiscounts = false;
 
     //#if MC>=12102
     //$$ @Rule(
     //$$ categories = {REMS, FEATURE, SURVIVAL}
     //$$ )
     //$$ public static boolean stringDupeReintroduced = false;
+    //#endif
+
+    //#if MC>=12006
+    //$$ @Rule(
+    //$$ categories = {REMS,EXPERIMENTAL}
+    //$$ )
+    //$$ public static boolean MagicBox = false;
     //#endif
 }

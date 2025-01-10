@@ -35,7 +35,7 @@ TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovemen
 * 默认值: `false`
 * 可选参数: `true`, `false`
 * 开启方法: `/carpet mergeTNTPro true`
-* 分类: `REMS`, `Feature`, `Survival`
+* 分类: `REMS`, `Feature`, `Survival`,`TNT`
 
 ## 末影珍珠加载(PearlTickets)
 这个mod允许末影珍珠实体选择性地加载即将通过的区块，这样珍珠炮打出的珍珠就不会因为进入未加载区块而丢失。在1.14+中可以替代地狱门加载链使用。   
@@ -49,39 +49,15 @@ TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovemen
 **移植自：**
 SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 
-## 计划刻催熟仙人掌(scheduledRandomTickCactus)
-当仙人掌方块收到计划刻时仍会给予生长随机刻
-* 默认值: `false`
-* 可选参数: `true`, `false`
-* 开启方法: `/carpet scheduledRandomTickCactus true`
-* 分类: `REMS`, `Feature`, `Survival`
-
-**移植自：**[OhMyVanillaMinecraft](https://github.com/hit-mc/OhMyVanillaMinecraft)
-
-## 计划刻催熟竹子(scheduledRandomTickBamboo)
-当竹子方块收到计划刻时仍会给予生长随机刻
-* 默认值: `false`
-* 可选参数: `true`, `false`
-* 开启方法: `/carpet scheduledRandomTickBamboo true`
-* 分类: `REMS`, `Feature`, `Survival`
-
-**移植自：**[OhMyVanillaMinecraft](https://github.com/hit-mc/OhMyVanillaMinecraft)
-
-## 计划刻催熟紫颂花(scheduledRandomTickChorusFlower)
-当紫颂花方块收到计划刻时仍会给予生长随机刻
-* 默认值: `false`
-* 可选参数: `true`, `false`
-* 开启方法: `/carpet scheduledRandomTickChorusFlower true`
-* 分类: `REMS`, `Feature`, `Survival`
-
-**移植自：**[OhMyVanillaMinecraft](https://github.com/hit-mc/OhMyVanillaMinecraft)
-
-## 计划刻催熟甘蔗(scheduledRandomTickSugarCane)
-当甘蔗方块收到计划刻时仍会给予生长随机刻
-* 默认值: `false`
-* 可选参数: `true`, `false`
-* 开启方法: `/carpet scheduledRandomTickSugarCane true`
-* 分类: `REMS`, `Feature`, `Survival`
+## 计划刻催熟植物
+## 活塞上面方块类型
+| 植物类型 | 是否支持 |    命令     |
+|:----:|:---------:|:---------:|
+| 仙人掌  |    ✔    |    /carpet scheduledRandomTickCactus true    |
+|  竹子   |    ✔    |    /carpet scheduledRandomTickBamboo true    |
+| 紫颂花  |    ✔    |    /carpet scheduledRandomTickChorusFlower true    |
+|  甘蔗   |    ✔    |    /carpet scheduledRandomTickSugarCane true    |
+当表上的植物收到计划刻时仍会给予生长随机刻
 
 **移植自：**[OhMyVanillaMinecraft](https://github.com/hit-mc/OhMyVanillaMinecraft)
 
@@ -124,13 +100,35 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 
 ## 重新引入拌线骗特性(StringDupeReintroduced)
 重新引入拌线骗特性，可以通过此规则来继续使用刷线机  
-(Minecraft>=1.21.2时启用)
+(Minecraft>=1.21.2时允许开启)
 * 默认值: `false`
 * 可选参数: `true`, `false`
 * 开启方法: `/carpet StringDupeReintroduced true`
 * 分类: `REMS` , `Survival` ,`Experimental`
 
+## 物品分身(ItemShadowing)
+重新引入1.16.5物品栏之间交换的逻辑
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet ItemShadowing true`
+* 分类: `REMS` , `Experimental`
+
+## CCE抑制器(ItemShadowing)
+重新引入类型转换的更新抑制
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet MagicBox true`
+* 分类: `REMS` , `ExperimentalL`
+
+## 共享打折(sharedVillagerDiscounts)
+玩家将僵尸村民治疗为村民后的获得的折扣将共享给所有玩家
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet sharedVillagerDiscounts true`
+* 分类: `REMS` , `Survival`,`Feature`
+
 # Works Cited
 - gnembon [fabric-carpet](https://github.com/gnembon/fabric-carpet)
 - Copetan [lunaar-carpet-addons](https://github.com/Lunaar-SMP/lunaar-carpet-addons)
 - 1024-byteeeee [Carpet-AMS-Addition](https://github.com/Minecraft-AMS/Carpet-AMS-Addition)
+- totorewa [totos-carpet-tweaks](https://github.com/totorewa/totos-carpet-tweaks)

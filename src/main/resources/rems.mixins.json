@@ -14,7 +14,12 @@
     "BlockRotatorMixin",
     "NetherPortalBlockMixin",
     "EnderPearlEntityMixin",
-    "TripwireHookBlockMixin"
+    "TripwireHookBlockMixin",
+    "MagicBox.BlockEntityMixin",
+    "MagicBox.LecternBlockMixin",
+    "MagicBox.ShulkerBoxBlockMixin",
+    "MagicBox.WorldChunkMixin",
+    "ItemShadowing.ScreenHandlerMixin"
   ],
   "client": [
   ],

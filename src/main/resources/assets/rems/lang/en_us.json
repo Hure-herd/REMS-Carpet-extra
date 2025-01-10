@@ -71,5 +71,20 @@
   "carpet.rule.stringDupeReintroduced.name": "StringDupeReintroduced",
   "carpet.rule.stringDupeReintroduced.desc" : "Reintroduced the string dupe feature, you can use this rule to continue using the string farm",
   "carpet.rule.stringDupeReintroduced.extra.0": "[True] - Open this rule",
-  "carpet.rule.stringDupeReintroduced.extra.1": "[False] - Disable the rule"
+  "carpet.rule.stringDupeReintroduced.extra.1": "[False] - Disable the rule",
+
+  "carpet.rule.sharedVillagerDiscounts.name": "SharedVillagerDiscounts",
+  "carpet.rule.sharedVillagerDiscounts.desc" : "Share villagers discount to all players",
+  "carpet.rule.sharedVillagerDiscounts.extra.0": "[True] - Open this rule",
+  "carpet.rule.sharedVillagerDiscounts.extra.1": "[False] - Disable the rule",
+
+  "carpet.rule.ItemShadowing.name": "ItemShadowing",
+  "carpet.rule.ItemShadowing.desc" : "Reintroducing the logic of swapping between inventory in 1.16.5",
+  "carpet.rule.ItemShadowing.extra.0": "[True] - Open this rule",
+  "carpet.rule.ItemShadowing.extra.1": "[False] - Disable the rule",
+
+  "carpet.rule.MagicBox.name": "MagicBox",
+  "carpet.rule.MagicBox.desc" : "Control whether CastSuppressor(CCESuppressor) is available",
+  "carpet.rule.MagicBox.extra.0": "[True] - Open this rule",
+  "carpet.rule.MagicBox.extra.1": "[False] - Disable the rule"
 }
