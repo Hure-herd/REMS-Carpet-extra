@@ -139,10 +139,15 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
                     this.setPosition(this.realPos);
                     this.sync = true;
                 }
+                //#if MC>12101
+                //$$ this.realPos = nextPos;
+                //$$ this.realVelocity = nextVelocity;
+                //#endif
             }
-
-            this.realPos = nextPos;
-            this.realVelocity = nextVelocity;
+            //#if MC<12101
+            //$$ this.realPos = nextPos;
+            //$$ this.realVelocity = nextVelocity;
+            //#endif
         }
     }
 }
