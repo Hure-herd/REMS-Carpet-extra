@@ -53,7 +53,7 @@ TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovemen
 SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 
 ## 末地折跃门加载(EndGatewayChunkLoader)
-当实体穿越末路之地折跃门时，目标区块会像下界传送门一样使目标区块获得3s的加载。
+当实体穿越末路之地折跃门时，目标区块会像下界传送门一样使目标区块获得3s的加载。  
 (Minecraft<1.21时允许开启)
 * 默认值: `OFF`
 * 可选参数: `ON`, `OFF`
