@@ -100,7 +100,7 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
             Vec3d nextVelocity = this.realVelocity.multiply(0.99F).subtract(0, this.getGravity(), 0);
             //#else
             //$$ Vec3d nextVelocity = this.realVelocity.multiply(0.99F).subtract(0, this.getGravity(), 0);
-            //$$ Vec3d nextPos = this.realPos.add(this.realVelocity);
+            //$$ Vec3d nextPos = this.realPos.add(nextVelocity);
             //#endif
             ChunkPos currChunkPos = new ChunkPos(new BlockPos((int)currPos.x, (int)currPos.y, (int)currPos.z));
             ChunkPos nextChunkPos = new ChunkPos(new BlockPos((int)nextPos.x, (int)nextPos.y, (int)nextPos.z));
