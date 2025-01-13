@@ -35,6 +35,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.WorldChunk;
 import net.minecraft.world.dimension.DimensionType;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -49,9 +50,12 @@ import java.util.concurrent.ExecutionException;
 @Mixin(EnderPearlEntity.class)
 public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
 
+    @Shadow public abstract void tick();
+
     private boolean sync = true;
     private Vec3d realPos = null;
     private Vec3d realVelocity = null;
+    private int tick = 1;
 
     protected EnderPearlEntityMixin(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
@@ -131,9 +135,10 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
                 DimensionType worldDimension = world.getDimension();
                 highestMotionBlockingY += worldDimension.minY();
                 PlayerEntity owner = (PlayerEntity) this.getOwner();
-                if(REMSSettings.pearlPosVelocity){
-                owner.sendMessage(Text.of(currChunkPos+"Max"+getHighestMotionBlockingY(nbtCompound1)),false);
-                owner.sendMessage(Text.of(nextChunkPos+"Max"+getHighestMotionBlockingY(nbtCompound2)),false);}
+                if(this.tick == 1){
+                    serverChunkManager.addTicket(ENDER_PEARL_TICKETS, nextChunkPos, 2, currChunkPos);
+                    this.tick =2;
+                }
 
                 if (this.realPos.y > highestMotionBlockingY
                         && nextPos.y > highestMotionBlockingY
@@ -150,6 +155,7 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
                     this.setVelocity(this.realVelocity);
                     this.setPosition(this.realPos);
                     this.sync = true;
+                    this.tick =1;
                 }
                 this.realPos = nextPos;
                 this.realVelocity = nextVelocity;

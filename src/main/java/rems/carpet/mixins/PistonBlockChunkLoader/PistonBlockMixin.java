@@ -20,6 +20,7 @@
 
 package rems.carpet.mixins.PistonBlockChunkLoader;
 
+import net.minecraft.server.world.ChunkHolder;
 import net.minecraft.server.world.ChunkTicketType;
 import net.minecraft.util.Identifier;
 import rems.carpet.REMSSettings;
@@ -36,7 +37,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Comparator;
-import java.util.Objects;
 
 
 @Mixin(PistonBlock.class)
