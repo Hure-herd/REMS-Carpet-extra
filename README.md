@@ -24,9 +24,9 @@
 | 钻石矿  | 弱加载1x1区块 |
 | 红石矿  | 强加载3X3区块 |
 |  金矿  | 强加载1X1区块 |
-* 默认值: `OFF`
-* 可选参数: `ON`, `OFF`
-* 开启方法: `/carpet pistonBlockChunkLoader ON`
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet pistonBlockChunkLoader ture`
 * 分类: `REMS` , `Survival` 
 > 如果不想使用地狱门加载链的话，此规则可作为替代方案。
 
@@ -43,21 +43,28 @@ TNT当量为1753+184的情况下，开启TIS-Carpet的optimizedFastEntityMovemen
 这个mod允许末影珍珠实体选择性地加载即将通过的区块，这样珍珠炮打出的珍珠就不会因为进入未加载区块而丢失。在1.14+中可以替代地狱门加载链使用。   
 该mod相比于@gnembon/carpet-extra mod的enderPearlChunkLoading功能有显著的性能提升。  
 (Minecraft>=1.21.2时开启后，可以显著提升珍珠炮的性能)
-* 默认值: `OFF`
-* 可选参数: `ON`, `OFF`
-* 开启方法: `/carpet pearlTickets ON`
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet pearlTickets true`
 * 分类: `REMS` , `Survival`
 
  
 **移植自：**
 SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 
+## 末影真实位置(PearlPosVelocity)
+在开启末影珍珠加载(PearlTickets)的时候，珍珠只会显示第一gt的位置，查看不到珍珠的真实位置和速度，开启这个后，会在公屏显示出来。
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet pearlPosVelocity true`
+* 分类: `REMS` , `Survival`
+
 ## 末地折跃门加载(EndGatewayChunkLoader)
 当实体穿越末路之地折跃门时，目标区块会像下界传送门一样使目标区块获得3s的加载。  
 (Minecraft<1.21时允许开启)
-* 默认值: `OFF`
-* 可选参数: `ON`, `OFF`
-* 开启方法: `/carpet endGatewayChunkLoader ON`
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet endGatewayChunkLoader true`
 * 分类: `REMS` , `Survival`
 
 
