@@ -52,7 +52,7 @@ public class EnderPearlEntityMixins extends ThrownItemEntity {
             at= @At(value = "INVOKE",
                     target = "Lnet/minecraft/server/network/ServerPlayerEntity;handleThrownEnderPearl(Lnet/minecraft/entity/projectile/thrown/EnderPearlEntity;)J"))
     private long load(ServerPlayerEntity instance, EnderPearlEntity enderPearl){
-        if((Objects.equals(REMSSettings.pearlTickets, "ON"))){
+        if(REMSSettings.pearlTickets){
             int pearlBlockX = (int) Math.floor(enderPearl.getX());
             int pearlBlockZ = (int) Math.floor(enderPearl.getZ());
             double pearlX = enderPearl.getX();

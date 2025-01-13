@@ -54,7 +54,7 @@ public abstract class PistonBlockMixin
     @Inject(method = "onSyncedBlockEvent", at = @At("HEAD"))
     private void load(BlockState state, World world, BlockPos pos, int type, int data, CallbackInfoReturnable info)
     {
-        if((Objects.equals(REMSSettings.pistonBlockChunkLoader, "ON")) && !world.isClient)
+        if(REMSSettings.pistonBlockChunkLoader && !world.isClient)
         {
             Direction direction = state.get(FacingBlock.FACING);
 

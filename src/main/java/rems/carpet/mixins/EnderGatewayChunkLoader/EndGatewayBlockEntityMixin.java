@@ -47,7 +47,7 @@ public class EndGatewayBlockEntityMixin {
     @Inject(method ="tryTeleportingEntity",at = @At(value = "INVOKE",
             target = "Lnet/minecraft/entity/Entity;teleport(DDD)V", shift = At.Shift.AFTER))
     private static void load(World world, BlockPos pos, BlockState state, Entity entity, EndGatewayBlockEntity blockEntity, CallbackInfo ci){
-        if(Objects.equals(REMSSettings.endGatewayChunkLoader, "ON")){
+        if(REMSSettings.endGatewayChunkLoader){
             BlockPos blockPos = new BlockPos(entity.getBlockPos());
             REMSServer.getServer().getWorld(World.END).getChunkManager().addTicket(TheEndGateway, new ChunkPos(pos), 3, blockPos);
         }

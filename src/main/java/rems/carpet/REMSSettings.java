@@ -29,16 +29,19 @@ public class REMSSettings
 {
 
     @Rule(
-            options = {"ON", "OFF"},
             categories = {REMS, SURVIVAL}
     )
-    public static String pistonBlockChunkLoader = "OFF";
+    public static boolean pistonBlockChunkLoader =  false;
 
     @Rule(
-            options = {"ON", "OFF"},
             categories = {REMS, SURVIVAL}
     )
-    public static String pearlTickets = "OFF";
+    public static boolean pearlTickets =  false;
+
+    @Rule(
+            categories = {REMS, SURVIVAL}
+    )
+    public static boolean pearlPosVelocity = false;
 
     @Rule(
             categories = {REMS, FEATURE}
@@ -91,10 +94,9 @@ public class REMSSettings
     public static boolean disablePortalUpdate = false;
     //#if MC<121
     @Rule(
-            options = {"ON", "OFF"},
             categories = {REMS, SURVIVAL}
     )
-    public static String endGatewayChunkLoader = "OFF";
+    public static boolean endGatewayChunkLoader = false;
     //#endif
 
     @Rule(

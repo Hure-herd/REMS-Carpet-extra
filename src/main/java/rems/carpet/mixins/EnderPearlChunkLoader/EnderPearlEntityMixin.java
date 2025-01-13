@@ -21,12 +21,15 @@
 package rems.carpet.mixins.EnderPearlChunkLoader;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.*;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.WorldChunk;
@@ -57,6 +60,9 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
     private static final ChunkTicketType<ChunkPos> ENDER_PEARL_TICKET =
             ChunkTicketType.create("ender_pearl", Comparator.comparingLong(ChunkPos::toLong), 2);
 
+    private static final ChunkTicketType<ChunkPos> ENDER_PEARL_TICKETS =
+            ChunkTicketType.create("ender_pearl", Comparator.comparingLong(ChunkPos::toLong), 10);
+
     private static boolean isEntityTickingChunk(WorldChunk chunk) {
         //#if MC<12001
         return (chunk != null && chunk.getLevelType() == ChunkHolder.LevelType.ENTITY_TICKING);
@@ -67,7 +73,7 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
 
     private static int getHighestMotionBlockingY(NbtCompound nbtCompound) {
         int highestY = Integer.MIN_VALUE;
-        if ((Objects.equals(REMSSettings.pearlTickets, "ON")) && nbtCompound != null) {
+        if (REMSSettings.pearlTickets && nbtCompound != null) {
             for (long element : nbtCompound.getCompound("Heightmaps").getLongArray("MOTION_BLOCKING")) {
                 for (int i = 0; i < 7; i++) {
                     //#if MC<12101
@@ -87,7 +93,7 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
     private void skippyChunkLoading(CallbackInfo ci) {
         World world = this.getEntityWorld();
 
-        if ((Objects.equals(REMSSettings.pearlTickets, "ON")) && world instanceof ServerWorld) {
+        if (REMSSettings.pearlTickets && world instanceof ServerWorld) {
             Vec3d currPos = this.getPos().add(Vec3d.ZERO);
             Vec3d currVelocity = this.getVelocity().add(Vec3d.ZERO);
 
@@ -124,30 +130,30 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
                 int highestMotionBlockingY = Integer.max(getHighestMotionBlockingY(nbtCompound1), getHighestMotionBlockingY(nbtCompound2));
                 DimensionType worldDimension = world.getDimension();
                 highestMotionBlockingY += worldDimension.minY();
+                PlayerEntity owner = (PlayerEntity) this.getOwner();
+                if(REMSSettings.pearlPosVelocity){
+                owner.sendMessage(Text.of(currChunkPos+"Max"+getHighestMotionBlockingY(nbtCompound1)),false);
+                owner.sendMessage(Text.of(nextChunkPos+"Max"+getHighestMotionBlockingY(nbtCompound2)),false);}
 
                 if (this.realPos.y > highestMotionBlockingY
                         && nextPos.y > highestMotionBlockingY
                         && nextPos.y + nextVelocity.y > highestMotionBlockingY) {
-                    serverChunkManager.addTicket(ENDER_PEARL_TICKET, currChunkPos, 2, currChunkPos);
-                    this.setVelocity(Vec3d.ZERO);
-                    this.setPosition(currPos);
-                    this.sync = false;
-
+                        serverChunkManager.addTicket(ENDER_PEARL_TICKETS, currChunkPos, 2, currChunkPos);
+                        this.setVelocity(Vec3d.ZERO);
+                        this.setPosition(currPos);
+                        this.sync = false;
+                        if(REMSSettings.pearlPosVelocity){
+                        owner.sendMessage(Text.of("EnderPearlY" + realPos), false);
+                        owner.sendMessage(Text.of("EnderPearlV" + realVelocity), false);}
                 } else {
                     serverChunkManager.addTicket(ENDER_PEARL_TICKET, nextChunkPos, 2, nextChunkPos);
                     this.setVelocity(this.realVelocity);
                     this.setPosition(this.realPos);
                     this.sync = true;
                 }
-                //#if MC>12101
-                //$$ this.realPos = nextPos;
-                //$$ this.realVelocity = nextVelocity;
-                //#endif
+                this.realPos = nextPos;
+                this.realVelocity = nextVelocity;
             }
-            //#if MC<12101
-            //$$ this.realPos = nextPos;
-            //$$ this.realVelocity = nextVelocity;
-            //#endif
         }
     }
 }
