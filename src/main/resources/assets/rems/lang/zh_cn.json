@@ -49,6 +49,10 @@
   "carpet.rule.pearlTickets.extra.0": "[True] - 打开该规则",
   "carpet.rule.pearlTickets.extra.1": "[False] - 禁用该规则",
 
+  "carpet.rule.projectileRaycastLength.name": "投掷物Raycast长度",
+  "carpet.rule.projectileRaycastLength.desc": "更改Raycast的距离。如果设置为0，将检查所有到达目的地的块，Vanilla!",
+  "carpet.rule.projectileRaycastLength.extra.0": "这减少了快速移动的延迟。在1.12中该值为200。",
+
   "carpet.rule.pearlPosVelocity.name": "末影珍珠真实位置与速度",
   "carpet.rule.pearlPosVelocity.desc": "可以查看开启末影珍珠加载区块的末影珍珠真实位置与速度",
   "carpet.rule.pearlPosVelocity.extra.0": "[True] - 打开该规则",

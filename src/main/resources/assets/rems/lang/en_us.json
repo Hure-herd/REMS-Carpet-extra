@@ -50,7 +50,11 @@
   "carpet.rule.pearlTickets.extra.0": "[True] - Open this rule",
   "carpet.rule.pearlTickets.extra.1": "[False] - Disable the rule",
 
-  "carpet.rule.pearlPosVelocity.name": "PearlTickets",
+  "carpet.rule.projectileRaycastLength.name": "projectileRaycastLengthValidato",
+  "carpet.rule.projectileRaycastLength.desc": "Changes the distance projectiles check for collisions. If set to 0 all Blocks to the destination will be checked which is the Vanilla behaviour.",
+  "carpet.rule.projectileRaycastLength.extra.0": "This reduces lag for fast projectiles. In 1.12 the value was 200.",
+
+  "carpet.rule.pearlPosVelocity.name": "pearlPosVelocity",
   "carpet.rule.pearlPosVelocity.desc": "Can check the real position and speed of the ender pearl when the ender PearlTickets is enabled.",
   "carpet.rule.pearlPosVelocity.extra.0": "[True] - Open this rule",
   "carpet.rule.pearlPosVelocity.extra.1": "[False] - Disable the rule",

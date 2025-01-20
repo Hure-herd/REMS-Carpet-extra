@@ -14,13 +14,14 @@
     "MagicBox.ShulkerBoxBlockMixin",
     "MagicBox.WorldChunkMixin",
     "ItemShadowing.ScreenHandlerMixin",
+    "EnderPearlChunkLoader.EnderPearlEntityMixin",
+    "EnderPearlChunkLoader.EnderPearlEntityMixins",
+    "EnderPearlChunkLoader.ProjectileUtilMixin",
     "keepWorldTickUpdate",
     "BatEntityMixin",
     "TntEntityMixin",
     "BlockRotatorMixin",
     "NetherPortalBlockMixin",
-    "EnderPearlChunkLoader.EnderPearlEntityMixin",
-    "EnderPearlChunkLoader.EnderPearlEntityMixins",
     "TripwireHookBlockMixin"
   ],
   "client": [

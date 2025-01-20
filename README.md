@@ -59,6 +59,16 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 * 开启方法: `/carpet pearlPosVelocity true`
 * 分类: `REMS` , `Survival`
 
+## 投掷物Raycast长度(ProjectileRaycastLength)
+更改Raycast的距离。如果设置为0，将检查所有到达目的地的块。  
+这减少了快速移动的延迟。在1.12中该值为200。
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet ProjectileRaycastLength true`
+* 分类: `REMS` , `Survival`
+
+**移植自：**[EpsilonSMP](https://github.com/EpsilonSMP/Epsilon-Carpet)
+
 ## 末地折跃门加载(EndGatewayChunkLoader)
 当实体穿越末路之地折跃门时，目标区块会像下界传送门一样使目标区块获得3s的加载。  
 (Minecraft<1.21时允许开启)

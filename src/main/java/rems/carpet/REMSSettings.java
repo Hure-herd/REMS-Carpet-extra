@@ -29,6 +29,13 @@ public class REMSSettings
 {
 
     @Rule(
+            categories = {REMS,EXPERIMENTAL,OPTIMIZATION},
+            options = {"0","200"},
+            strict = false
+    )
+    public static int projectileRaycastLength = 0;
+
+    @Rule(
             categories = {REMS, SURVIVAL}
     )
     public static boolean pistonBlockChunkLoader =  false;
