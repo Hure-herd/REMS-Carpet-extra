@@ -57,7 +57,7 @@ SunnySlopes 的[PearlTickets](https://github.com/SunnySlopes/PearlTickets)
 * 默认值: `false`
 * 可选参数: `true`, `false`
 * 开启方法: `/carpet pearlPosVelocity true`
-* 分类: `REMS` , `Survival`
+* 分类: `REMS` , `Survival`s
 
 ## 投掷物Raycast长度(ProjectileRaycastLength)
 更改Raycast的距离。如果设置为0，将检查所有到达目的地的块。  
